@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/link';
+import '../../styles/main.scss';
 
 class Header extends Component {
     render() {
@@ -25,7 +26,18 @@ class Header extends Component {
                 </Link>
                 <Link href="/portfolios">
                     <a> Portfolios </a>
-                </Link>  
+                </Link> 
+                <style jsx>{`
+                    a{
+                        font-size: 20px;
+                        text-decoration: None;
+                        color: blue;
+                    }
+                    a:hover{
+                        color: green;
+                        text-decoration: underline;
+                    }
+                `}</style>
             </React.Fragment>
         )
     }
