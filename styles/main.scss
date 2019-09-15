@@ -1,0 +1,32 @@
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+ 
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Thin.ttf');
+    font-weight: lighter;
+    font-style: normal;
+}
+ 
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Thin.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+html, body{
+    font-family: 'Gayathri', 'Roboto' !important;
+}
+ 
