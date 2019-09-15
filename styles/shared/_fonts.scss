@@ -1,0 +1,29 @@
+// The _ means that this is a partial file and need to be imported in another file, so it won't be compiled to css, separately 
+
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+ 
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Thin.ttf');
+    font-weight: lighter;
+    font-style: normal;
+}
+ 
+@font-face{
+    font-family: 'Gayathri';
+    src: url('/static/fonts/Gayathri-Thin.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
