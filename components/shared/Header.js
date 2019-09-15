@@ -4,13 +4,9 @@ import '../../styles/main.scss';
 
 class Header extends Component {
     render() {
-        const title = this.props.title;
-        const child = this.props.children;
+
         return (
             <React.Fragment>
-
-                <p>{ title }</p>
-                <p>{ child }</p>
 
                 <Link href="/">
                     <a> Home </a>  
