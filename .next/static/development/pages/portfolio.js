@@ -11290,7 +11290,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 2:
 /*!******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fportfolio&absolutePagePath=I%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolio.js ***!
   \******************************************************************************************************************************************/
@@ -11313,5 +11313,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=portfolio.js.map
