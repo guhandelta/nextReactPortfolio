@@ -1,7 +1,6 @@
 {
   "devFiles": [
-    "static/development/dll/dll_397dc449097af0b4e992.js",
-    "static/development/dll/dll_397dc449097af0b4e992.js.map"
+    "static/development/dll/dll_acd4b37f209c0ccc13e2.js"
   ],
   "pages": {
     "/_app": [
@@ -12,13 +11,13 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/portfolio": [
+    "/portfolios": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
-    "/portfolios": [
+    "/portfolio": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
