@@ -8,12 +8,21 @@ const handle = app.getRequestHandler()
 app.prepare()
 .then(() => {
     const server = express()
+    
+    // This block handles specific requests, and is placed before server.get('*',(req,res) =>{-
+    // -as the control never crosses that block, to enter this block, and this block never gets executed
+    // * is the wild card here
+    server.get('/portfolio/:id', (req,res) => { 
+        const actualPage = '/portfolio'
+        const queryParams = { id: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+    })
 
     server.get('*', (req,res) => {
             return handle(req,res)
     })
 
-    server.listen(3000, (err) =>{
+    server.listen(4000, (err) =>{
         if (err) throw err
         console.log('> Ready on http://localhost:3000')
     })

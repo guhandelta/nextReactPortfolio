@@ -99,7 +99,7 @@ function (_Component) {
         className: "jsx-2083101405"
       }, " Portfolios ")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_5___default.a, {
         id: "2083101405"
-      }, "a.jsx-2083101405{font-size:20px;-webkit-text-decoration:None;text-decoration:None;color:blue;}a.jsx-2083101405:hover{color:green;-webkit-text-decoration:underline;text-decoration:underline;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkg6XFxQcm9qZWN0c1xcbmV4dFJlYWN0UmVkdXhQb3J0Zm9saW9cXGNvbXBvbmVudHNcXHNoYXJlZFxcSGVhZGVyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTZCNEIsQUFHd0MsQUFLSCxZQUNjLEdBTEwsa0RBQ1YsT0FLZixJQUpBIiwiZmlsZSI6Ikg6XFxQcm9qZWN0c1xcbmV4dFJlYWN0UmVkdXhQb3J0Zm9saW9cXGNvbXBvbmVudHNcXHNoYXJlZFxcSGVhZGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnO1xyXG5pbXBvcnQgJy4uLy4uL3N0eWxlcy9tYWluLnNjc3MnO1xyXG5cclxuY2xhc3MgSGVhZGVyIGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICAgIHJlbmRlcigpIHtcclxuICAgICAgICBjb25zdCB0aXRsZSA9IHRoaXMucHJvcHMudGl0bGU7XHJcbiAgICAgICAgY29uc3QgY2hpbGQgPSB0aGlzLnByb3BzLmNoaWxkcmVuO1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxSZWFjdC5GcmFnbWVudD5cclxuXHJcbiAgICAgICAgICAgICAgICA8cD57IHRpdGxlIH08L3A+XHJcbiAgICAgICAgICAgICAgICA8cD57IGNoaWxkIH08L3A+XHJcblxyXG4gICAgICAgICAgICAgICAgPExpbmsgaHJlZj1cIi9cIj5cclxuICAgICAgICAgICAgICAgICAgICA8YT4gSG9tZSA8L2E+ICBcclxuICAgICAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvYWJvdXRcIj5cclxuICAgICAgICAgICAgICAgICAgICA8YT4gQWJvdXQgPC9hPiAgXHJcbiAgICAgICAgICAgICAgICA8L0xpbms+XHJcbiAgICAgICAgICAgICAgICA8TGluayBocmVmPVwiL2Jsb2dcIj5cclxuICAgICAgICAgICAgICAgICAgICA8YT4gQmxvZyA8L2E+XHJcbiAgICAgICAgICAgICAgICA8L0xpbms+XHJcbiAgICAgICAgICAgICAgICA8TGluayBocmVmPVwiL2N2XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGE+IENWIDwvYT5cclxuICAgICAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvcG9ydGZvbGlvc1wiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxhPiBQb3J0Zm9saW9zIDwvYT5cclxuICAgICAgICAgICAgICAgIDwvTGluaz4gXHJcbiAgICAgICAgICAgICAgICA8c3R5bGUganN4PntgXHJcbiAgICAgICAgICAgICAgICAgICAgYXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IE5vbmU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yOiBibHVlO1xyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICBhOmhvdmVye1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogZ3JlZW47XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgICAgPC9SZWFjdC5GcmFnbWVudD5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IEhlYWRlcjsiXX0= */\n/*@ sourceURL=H:\\Projects\\nextReactReduxPortfolio\\components\\shared\\Header.js */"));
+      }, "a.jsx-2083101405{font-size:20px;-webkit-text-decoration:None;text-decoration:None;color:blue;}a.jsx-2083101405:hover{color:green;-webkit-text-decoration:underline;text-decoration:underline;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkk6XFxQcm9qZWN0c1xcbmV4dFJlYWN0UmVkdXhQb3J0Zm9saW9cXGNvbXBvbmVudHNcXHNoYXJlZFxcSGVhZGVyLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTZCNEIsQUFHd0MsQUFLSCxZQUNjLEdBTEwsa0RBQ1YsT0FLZixJQUpBIiwiZmlsZSI6Ikk6XFxQcm9qZWN0c1xcbmV4dFJlYWN0UmVkdXhQb3J0Zm9saW9cXGNvbXBvbmVudHNcXHNoYXJlZFxcSGVhZGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnO1xyXG5pbXBvcnQgJy4uLy4uL3N0eWxlcy9tYWluLnNjc3MnO1xyXG5cclxuY2xhc3MgSGVhZGVyIGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICAgIHJlbmRlcigpIHtcclxuICAgICAgICBjb25zdCB0aXRsZSA9IHRoaXMucHJvcHMudGl0bGU7XHJcbiAgICAgICAgY29uc3QgY2hpbGQgPSB0aGlzLnByb3BzLmNoaWxkcmVuO1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxSZWFjdC5GcmFnbWVudD5cclxuXHJcbiAgICAgICAgICAgICAgICA8cD57IHRpdGxlIH08L3A+XHJcbiAgICAgICAgICAgICAgICA8cD57IGNoaWxkIH08L3A+XHJcblxyXG4gICAgICAgICAgICAgICAgPExpbmsgaHJlZj1cIi9cIj5cclxuICAgICAgICAgICAgICAgICAgICA8YT4gSG9tZSA8L2E+ICBcclxuICAgICAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvYWJvdXRcIj5cclxuICAgICAgICAgICAgICAgICAgICA8YT4gQWJvdXQgPC9hPiAgXHJcbiAgICAgICAgICAgICAgICA8L0xpbms+XHJcbiAgICAgICAgICAgICAgICA8TGluayBocmVmPVwiL2Jsb2dcIj5cclxuICAgICAgICAgICAgICAgICAgICA8YT4gQmxvZyA8L2E+XHJcbiAgICAgICAgICAgICAgICA8L0xpbms+XHJcbiAgICAgICAgICAgICAgICA8TGluayBocmVmPVwiL2N2XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGE+IENWIDwvYT5cclxuICAgICAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvcG9ydGZvbGlvc1wiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxhPiBQb3J0Zm9saW9zIDwvYT5cclxuICAgICAgICAgICAgICAgIDwvTGluaz4gXHJcbiAgICAgICAgICAgICAgICA8c3R5bGUganN4PntgXHJcbiAgICAgICAgICAgICAgICAgICAgYXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IE5vbmU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yOiBibHVlO1xyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICBhOmhvdmVye1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogZ3JlZW47XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgICAgPC9SZWFjdC5GcmFnbWVudD5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IEhlYWRlcjsiXX0= */\n/*@ sourceURL=I:\\Projects\\nextReactReduxPortfolio\\components\\shared\\Header.js */"));
     }
   }]);
 
@@ -7632,9 +7632,9 @@ exports.SUPPORTS_PERFORMANCE_USER_TIMING = exports.SUPPORTS_PERFORMANCE && typeo
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fportfolios&absolutePagePath=H%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js!./":
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fportfolios&absolutePagePath=I%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js!./":
 /*!****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fportfolios&absolutePagePath=H%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js ***!
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fportfolios&absolutePagePath=I%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js ***!
   \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12929,10 +12929,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -12961,8 +12961,11 @@ function (_React$Component) {
     key: "renderPosts",
     value: function renderPosts(posts) {
       return posts.map(function (post) {
-        return __jsx("li", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_10___default.a, {
-          href: "/portfolio?title=".concat(post.title)
+        return __jsx("li", {
+          key: post.id
+        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
+          as: "/portfolio/".concat(post.id),
+          href: "/portfolio?id=".concat(post.title)
         }, __jsx("a", {
           style: {
             'fontSize': '20px'
@@ -12990,7 +12993,7 @@ function (_React$Component) {
                 posts = [];
                 _context.prev = 1;
                 _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_9___default.a.get('https://jsonplaceholder.typicode.com/posts');
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a.get('https://jsonplaceholder.typicode.com/posts');
 
               case 4:
                 response = _context.sent;
@@ -13033,12 +13036,12 @@ function (_React$Component) {
 
 /***/ 3:
 /*!********************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fportfolios&absolutePagePath=H%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js ***!
+  !*** multi next-client-pages-loader?page=%2Fportfolios&absolutePagePath=I%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js ***!
   \********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fportfolios&absolutePagePath=H%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fportfolios&absolutePagePath=H%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fportfolios&absolutePagePath=I%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fportfolios&absolutePagePath=I%3A%5CProjects%5CnextReactReduxPortfolio%5Cpages%5Cportfolios.js!./");
 
 
 /***/ }),
