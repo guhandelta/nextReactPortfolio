@@ -12697,7 +12697,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 8:
 /*!**********************************!*\
   !*** multi ./pages/portfolio.js ***!
   \**********************************/
@@ -12722,5 +12722,5 @@ module.exports = dll_5a69c71dbdf1d30ccbcd;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]));;
+},[[8,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=portfolio.js.map

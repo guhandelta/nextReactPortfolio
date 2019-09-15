@@ -1,9 +1,9 @@
-webpackHotUpdate("static\\development\\pages\\portfolio.js",{
+webpackHotUpdate("static\\development\\pages\\portfolios.js",{
 
-/***/ "./pages/portfolio.js":
-/*!****************************!*\
-  !*** ./pages/portfolio.js ***!
-  \****************************/
+/***/ "./pages/portfolios.js":
+/*!*****************************!*\
+  !*** ./pages/portfolios.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -14,8 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -47,67 +47,79 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Portfolio =
+var Portfolios =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Portfolio, _React$Component);
+  _inherits(Portfolios, _React$Component);
 
-  function Portfolio() {
-    _classCallCheck(this, Portfolio);
+  function Portfolios() {
+    _classCallCheck(this, Portfolios);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolios).apply(this, arguments));
   }
 
-  _createClass(Portfolio, [{
+  _createClass(Portfolios, [{
+    key: "renderPosts",
+    value: function renderPosts(posts) {
+      return posts.map(function (post, index) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+          key: index
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+          route: "/portfolio/".concat(post.id)
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          style: {
+            'fontSize': '20px'
+          }
+        }, post.title)));
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var portfolio = this.props.portfolio;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " ", portfolio.title, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, " Body: ", portfolio.body, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, " ID: ", portfolio.id, " "));
+      var posts = this.props.posts;
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "This is the Portfolios Page"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.renderPosts(posts)));
     }
   }], [{
     key: "getInitialProps",
     value: function () {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var query, portfolioId, portfolio, response;
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var posts, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                query = _ref.query;
-                // Destructurizing the data object and extracting the query param
-                portfolioId = query.id;
-                portfolio = {};
-                _context.prev = 3;
-                _context.next = 6;
-                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://jsonplaceholder.typicode.com/posts/".concat(portfolioId));
+                posts = [];
+                _context.prev = 1;
+                _context.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://jsonplaceholder.typicode.com/posts');
 
-              case 6:
+              case 4:
                 response = _context.sent;
-                portfolio = response.data;
-                _context.next = 13;
+                posts = response.data;
+                _context.next = 11;
                 break;
 
-              case 10:
-                _context.prev = 10;
-                _context.t0 = _context["catch"](3);
-                console.log(_context.t0);
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](1);
+                console.error(_context.t0);
 
-              case 13:
+              case 11:
                 return _context.abrupt("return", {
-                  portfolio: portfolio
+                  posts: posts.splice(0, 10)
                 });
 
-              case 14:
+              case 12:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[3, 10]]);
+        }, _callee, null, [[1, 8]]);
       }));
 
-      function getInitialProps(_x) {
+      function getInitialProps() {
         return _getInitialProps.apply(this, arguments);
       }
 
@@ -115,10 +127,10 @@ function (_React$Component) {
     }()
   }]);
 
-  return Portfolio;
+  return Portfolios;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Portfolio));
+/* harmony default export */ __webpack_exports__["default"] = (Portfolios);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -135,11 +147,11 @@ function (_React$Component) {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/portfolio")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/portfolios")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
 })
-//# sourceMappingURL=portfolio.js.70f08c0eb2c7ab282bb3.hot-update.js.map
+//# sourceMappingURL=portfolios.js.5ac636063184464f7be4.hot-update.js.map
