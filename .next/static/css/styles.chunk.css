@@ -116,7 +116,13 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Gayathri', 'Roboto'; }
+  font-family: 'Montserrat', 'Roboto'; }
+
+.self-typed {
+  font-size: 31px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
