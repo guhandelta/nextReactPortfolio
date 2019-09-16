@@ -170,6 +170,18 @@ var BstrNavLink = function BstrNavLink(props) {
   }, " ", title, " "));
 };
 
+var Login = function Login() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-link port-navbar-link clickable"
+  }, " Login ");
+};
+
+var Logout = function Logout() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-link port-navbar-link clickable"
+  }, " Logout ");
+};
+
 var Example =
 /*#__PURE__*/
 function (_React$Component) {
@@ -239,7 +251,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BstrNavLink, {
         route: "/cv",
         title: "CV"
-      }))))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+        className: "port-navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+        className: "port-navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logout, null))))));
     }
   }]);
 
