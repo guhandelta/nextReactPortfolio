@@ -15,12 +15,16 @@ class Auth0{
     }
 
     handleAuthentication(){
-        this.auth0.parseHash((err, authResult) => {
-            if( authResult && authResult.accessToken && authResult.idToken ){
-                this.setSession(authResult);
-            } else if(err){
-                console.log(err);
-            }
+        return new Promise((resolve, reject) => {
+            this.auth0.parseHash((err, authResult) => {
+                if( authResult && authResult.accessToken && authResult.idToken ){
+                    this.setSession(authResult);
+                    resolve();
+                } else if(err){
+                    reject(err);
+                    console.log(err);
+                }
+            });
         });
     }
 

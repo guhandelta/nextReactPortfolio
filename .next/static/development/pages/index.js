@@ -20881,12 +20881,17 @@ function () {
     value: function handleAuthentication() {
       var _this = this;
 
-      this.auth0.parseHash(function (err, authResult) {
-        if (authResult && authResult.accessToken && authResult.idToken) {
-          _this.setSession(authResult);
-        } else if (err) {
-          console.log(err);
-        }
+      return new Promise(function (resolve, reject) {
+        _this.auth0.parseHash(function (err, authResult) {
+          if (authResult && authResult.accessToken && authResult.idToken) {
+            _this.setSession(authResult);
+
+            resolve();
+          } else if (err) {
+            reject(err);
+            console.log(err);
+          }
+        });
       });
     }
   }, {
