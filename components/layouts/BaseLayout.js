@@ -9,7 +9,7 @@ const BaseLayout = (props) => {
         <React.Fragment>
             <Header />
             <main className={`cover ${className}`}>
-                <div className="wrapper">
+                <div className="wrapper">   
                     {children}
                 </div>
             </main>
