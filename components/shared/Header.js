@@ -21,7 +21,7 @@ const BstrNavLink = (props) => {
 
 const Login = () => {
   return(
-    <span className="nav-link port-navbar-link clickable"> Login </span>
+    <span onclick={} className="nav-link port-navbar-link clickable"> Login </span>
   )
 }
 
