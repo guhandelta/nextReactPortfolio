@@ -162,6 +162,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var BstrNavLink = function BstrNavLink(props) {
   var route = props.route,
       title = props.title;
@@ -183,23 +184,7 @@ var Logout = function Logout() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "nav-link port-navbar-link authButtons"
   }, " Logout ");
-}; // const authBtn = () => {
-//   return(
-//     <div>
-//       {!isAuthenticated && (
-//         <button
-//           onClick={() =>
-//             loginWithRedirect({})
-//           }
-//         >
-//           Log in
-//         </button>
-//       )}
-//       {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
-//     </div>
-//   )
-// }
-
+};
 
 var Example =
 /*#__PURE__*/
@@ -270,9 +255,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BstrNavLink, {
         route: "/cv",
         title: "CV"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      })), !_services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
         className: "port-navbar-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logout, null))))));
     }
@@ -462,7 +447,7 @@ function () {
     value: function setSession(authResult) {
       debugger; // Set the Token expiration time
 
-      var expiresAt = JSON.stringify(authResult.expiresIn * 1000 * new Date().getTime()); // localStorage.setItem('access_token', authResult.accessToken);
+      var expiresAt = JSON.stringify(authResult.expiresIn * 1000 + new Date().getTime()); // localStorage.setItem('access_token', authResult.accessToken);
 
       js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.set('user', authResult.idTokenPayload);
       js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.set('jwt', authResult.idToken);
