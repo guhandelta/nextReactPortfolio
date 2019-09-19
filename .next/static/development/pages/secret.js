@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\about.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\secret.js"],{
 
 /***/ "./components/BasePage.js":
 /*!********************************!*\
@@ -50434,10 +50434,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/about.js":
-/*!************************!*\
-  !*** ./pages/about.js ***!
-  \************************/
+/***/ "./pages/secret.js":
+/*!*************************!*\
+  !*** ./pages/secret.js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -50469,30 +50469,39 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var About =
+var Secret =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(About, _React$Component);
+function (_Component) {
+  _inherits(Secret, _Component);
 
-  function About() {
-    _classCallCheck(this, About);
+  function Secret() {
+    _classCallCheck(this, Secret);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(About).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Secret).apply(this, arguments));
   }
 
-  _createClass(About, [{
+  _createClass(Secret, [{
+    key: "renderSecretPage",
+    value: function renderSecretPage() {
+      var isAuthenticated = this.props.auth.isAuthenticated;
+
+      if (isAuthenticated) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to the Hood!!....")));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "You're not allowed to view this page")));
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        className: "about-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is the About Page")));
+      return this.renderSecretPage();
     }
   }]);
 
-  return About;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  return Secret;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (About);
+/* harmony default export */ __webpack_exports__["default"] = (Secret);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -50509,7 +50518,7 @@ function (_React$Component) {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/about")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/secret")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
@@ -50827,15 +50836,15 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
-/***/ 10:
-/*!******************************!*\
-  !*** multi ./pages/about.js ***!
-  \******************************/
+/***/ 11:
+/*!*******************************!*\
+  !*** multi ./pages/secret.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__NEXT_REGISTER_PAGE('/about', function() {
-module.exports = __webpack_require__(/*! ./pages/about.js */"./pages/about.js");
+__NEXT_REGISTER_PAGE('/secret', function() {
+module.exports = __webpack_require__(/*! ./pages/secret.js */"./pages/secret.js");
 
 return { page: module.exports.default }});
 
@@ -50896,5 +50905,5 @@ module.exports = dll_5a69c71dbdf1d30ccbcd;
 
 /***/ })
 
-},[[10,"static/runtime/webpack.js"]]]));;
-//# sourceMappingURL=about.js.map
+},[[11,"static/runtime/webpack.js"]]]));;
+//# sourceMappingURL=secret.js.map
