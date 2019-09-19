@@ -182,6 +182,7 @@ var Login = function Login() {
 
 var Logout = function Logout() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].logout,
     className: "nav-link port-navbar-link clickable"
   }, " Logout ");
 };
@@ -255,9 +256,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BstrNavLink, {
         route: "/cv",
         title: "CV"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      })), !_services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
         className: "port-navbar-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].isAuthenticated() && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logout, null))))));
     }
@@ -472,7 +473,7 @@ function () {
     value: function isAuthenticated() {
       // fn() to check if the current time is past the Access Token's expiry time
       var expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON('expiresAt');
-      return new Date.getTime() < expiresAt;
+      return new Date().getTime() < expiresAt;
     }
   }, {
     key: "login",
