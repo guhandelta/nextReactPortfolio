@@ -9898,6 +9898,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -9944,8 +9946,12 @@ function (_app) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
-          pageProps = _this$props.pageProps;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, pageProps));
+          pageProps = _this$props.pageProps,
+          auth = _this$props.auth; // Passing isAuthernticated as props to all the components => pages
+
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
+        auth: auth
+      })));
     }
   }], [{
     key: "getInitialProps",
@@ -9953,7 +9959,7 @@ function (_app) {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var Component, router, ctx, pageProps, isAuthenticated;
+        var Component, router, ctx, pageProps, isAuthenticated, auth;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -9964,22 +9970,25 @@ function (_app) {
 
                 isAuthenticated =  true ? _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].clientAuth() : undefined; // Check the enviroment where getInitialProps() is currently executed and call the appropriate Authenticaiton fn() 
 
-                console.log(isAuthenticated);
-
                 if (!Component.getInitialProps) {
-                  _context.next = 8;
+                  _context.next = 7;
                   break;
                 }
 
-                _context.next = 7;
+                _context.next = 6;
                 return Component.getInitialProps(ctx);
 
-              case 7:
+              case 6:
                 pageProps = _context.sent;
 
-              case 8:
+              case 7:
+                auth = {
+                  isAuthenticated: isAuthenticated
+                }; // Retrieve isAuthenticated value
+
                 return _context.abrupt("return", {
-                  pageProps: pageProps
+                  pageProps: pageProps,
+                  auth: auth
                 });
 
               case 9:

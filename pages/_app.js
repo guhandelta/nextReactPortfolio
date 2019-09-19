@@ -23,21 +23,22 @@ export default class MyApp extends app{
         //- for every pages in the application
         const isAuthenticated = process.browser ? auth0.clientAuth() : auth0.serverAuth(ctx.req);
         // Check the enviroment where getInitialProps() is currently executed and call the appropriate Authenticaiton fn() 
-        console.log(isAuthenticated);
 
         if(Component.getInitialProps){ // Check if the component has getInitialProps()
             pageProps = await Component.getInitialProps(ctx) // Get the parameters for the page here
         }
 
-        return { pageProps }; // Pass the page params as props
+        const auth = { isAuthenticated }; // Retrieve isAuthenticated value
+
+        return { pageProps, auth }; // Pass the page params as props
     }
 
     render(){
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps, auth } = this.props; // Passing isAuthernticated as props to all the components => pages
 
         return(
             <Container>
-                <Component {...pageProps} />
+                <Component {...pageProps} auth={auth} />
             </Container>
         )
     }
