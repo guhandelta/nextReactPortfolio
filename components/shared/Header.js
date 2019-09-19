@@ -9,9 +9,10 @@ import {
     NavItem,
     NavLink
     } from 'reactstrap';
+import auth0 from '../../services/auth0';
 
 const BstrNavLink = (props) => {
-    const { route, title } = props;
+    const { route, title } = props;  //  .Login} 
     return(
         <Link href={ route }>
             <a className="nav-link port-navbar-link"> { title } </a>  
@@ -21,7 +22,7 @@ const BstrNavLink = (props) => {
 
 const Login = () => {
   return(
-    <span onclick={} className="nav-link port-navbar-link clickable"> Login </span>
+    <span onClick={auth0.login} className="nav-link port-navbar-link clickable"> Login </span>
   )
 }
 
