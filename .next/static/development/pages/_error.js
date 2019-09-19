@@ -545,7 +545,7 @@ module.exports = _typeof;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/next/node_modules/regenerator-runtime/runtime-module.js");
 
 
 /***/ }),
@@ -5344,32 +5344,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd
 
 /***/ }),
 
-/***/ "./node_modules/object-assign/index.js":
-/*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd */ "dll-reference dll_5a69c71dbdf1d30ccbcd"))("./node_modules/object-assign/index.js");
-
-/***/ }),
-
-/***/ "./node_modules/react/index.js":
-/*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd */ "dll-reference dll_5a69c71dbdf1d30ccbcd"))("./node_modules/react/index.js");
-
-/***/ }),
-
-/***/ "./node_modules/regenerator-runtime/runtime-module.js":
-/*!************************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
-  \************************************************************/
+/***/ "./node_modules/next/node_modules/regenerator-runtime/runtime-module.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/next/node_modules/regenerator-runtime/runtime-module.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5397,7 +5375,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/regenerator-runtime/runtime.js");
+module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/next/node_modules/regenerator-runtime/runtime.js");
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -5414,10 +5392,10 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ "./node_modules/regenerator-runtime/runtime.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime.js ***!
-  \*****************************************************/
+/***/ "./node_modules/next/node_modules/regenerator-runtime/runtime.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/next/node_modules/regenerator-runtime/runtime.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -6143,6 +6121,28 @@ if (hadRuntime) {
   })() || Function("return this")()
 );
 
+
+/***/ }),
+
+/***/ "./node_modules/object-assign/index.js":
+/*!***************************************************************************************************!*\
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd */ "dll-reference dll_5a69c71dbdf1d30ccbcd"))("./node_modules/object-assign/index.js");
+
+/***/ }),
+
+/***/ "./node_modules/react/index.js":
+/*!*******************************************************************************************!*\
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd */ "dll-reference dll_5a69c71dbdf1d30ccbcd"))("./node_modules/react/index.js");
 
 /***/ }),
 
