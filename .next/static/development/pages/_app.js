@@ -37938,7 +37938,6 @@ function () {
     this.login = this.login.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.logout = this.logout.bind(this);
-    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   _createClass(Auth0, [{
@@ -37964,8 +37963,7 @@ function () {
   }, {
     key: "setSession",
     value: function setSession(authResult) {
-      debugger; // Set the Token expiration time
-
+      // Set the Token expiration time
       var expiresAt = JSON.stringify(authResult.expiresIn * 1000 + new Date().getTime()); // localStorage.setItem('access_token', authResult.accessToken);
 
       js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.set('user', authResult.idTokenPayload);
@@ -37989,18 +37987,11 @@ function () {
       this.auth0.authorize();
     }
   }, {
-    key: "isAuthenticated",
-    value: function isAuthenticated() {
-      // fn() to check if the current time is past the Access Token's expiry time
-      var expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON('expiresAt');
-      return new Date().getTime() < expiresAt;
-    }
-  }, {
     key: "verifyToken",
     value: function verifyToken(token) {
       if (token) {
         var decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default.a.decode(token);
-        var expiresAt = decodedToken.exp * 1000; // If a decoded token exists && time is < expiresAt
+        var expiresAt = decodedToken.exp * 1000; // If a decoded token exists && current time is < expiresAt
 
         return decodedToken && new Date().getTime() < expiresAt ? decodedToken : undefined;
       } // If there is no token
@@ -38011,6 +38002,7 @@ function () {
   }, {
     key: "clientAuth",
     value: function clientAuth() {
+      debugger;
       var token = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON('jwt');
       var verifiedToken = this.verifyToken(token);
       return verifiedToken;

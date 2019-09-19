@@ -15,7 +15,6 @@ class Auth0{
         this.login = this.login.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
         this.logout = this.logout.bind(this);
-        this.isAuthenticated = this.isAuthenticated.bind(this);
     }
 
     handleAuthentication(){
@@ -34,7 +33,6 @@ class Auth0{
     }
     
     setSession(authResult){
-        debugger;
         // Set the Token expiration time
         const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
         // localStorage.setItem('access_token', authResult.accessToken);
@@ -59,18 +57,12 @@ class Auth0{
         this.auth0.authorize();
     }
 
-    isAuthenticated(){ // fn() to check if the current time is past the Access Token's expiry time
-
-        const expiresAt = Cookies.getJSON('expiresAt');
-        return new Date().getTime() < expiresAt;
-    }
-
     verifyToken(token){
         if(token){
             const decodedToken = jwt.decode(token);
             const expiresAt = decodedToken.exp * 1000;
 
-            // If a decoded token exists && time is < expiresAt
+            // If a decoded token exists && current time is < expiresAt
             return (decodedToken && new Date().getTime() < expiresAt) ? decodedToken : undefined;
         }
 
@@ -79,6 +71,7 @@ class Auth0{
     }
 
     clientAuth(){
+        debugger;
         const token = Cookies.getJSON('jwt')    
         const verifiedToken = this.verifyToken(token);
 
