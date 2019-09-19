@@ -16,6 +16,7 @@ class Auth0{
     }
 
     handleAuthentication(){
+        debugger;
         return new Promise((resolve, reject) => {
             this.auth0.parseHash((err, authResult) => { //parseHash() will parse the hash in the url and returns authResult
                 // using the authResult returned by parseHash, it can be determined if the user is logged in or not

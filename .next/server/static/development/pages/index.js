@@ -425,6 +425,7 @@ function () {
     value: function handleAuthentication() {
       var _this = this;
 
+      debugger;
       return new Promise(function (resolve, reject) {
         _this.auth0.parseHash(function (err, authResult) {
           //parseHash() will parse the hash in the url and returns authResult
