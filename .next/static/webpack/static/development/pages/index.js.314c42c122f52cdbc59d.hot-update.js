@@ -1,4 +1,4 @@
-webpackHotUpdate("static\\development\\pages\\callback.js",{
+webpackHotUpdate("static\\development\\pages\\index.js",{
 
 /***/ "./services/auth0.js":
 /*!***************************!*\
@@ -84,6 +84,11 @@ function () {
       });
     }
   }, {
+    key: "login",
+    value: function login() {
+      this.auth0.authorize();
+    }
+  }, {
     key: "isAuthenticated",
     value: function isAuthenticated() {
       // fn() to check if the current time is past the Access Token's expiry time
@@ -91,9 +96,39 @@ function () {
       return new Date().getTime() < expiresAt;
     }
   }, {
-    key: "login",
-    value: function login() {
-      this.auth0.authorize();
+    key: "clientAuth",
+    value: function clientAuth() {
+      return this.isAuthenticated();
+    }
+  }, {
+    key: "serverAuth",
+    value: function serverAuth(req) {
+      //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
+      // The cookies on the server may be found in the request obj
+      if (req.headers.cookie) {
+        var expiresAtCookie = req.headers.cookie.split(';').find(function (c) {
+          return c.trim().startsWith('expiresAt=');
+        }); // const cookies = req.headers.cookie;
+        // console.log("req.headers.cookie :",cookies);
+        // const splitCookies = cookies.split(';');
+        // console.log("splitCookies :",splitCookies);
+        // const expiresAtCookie = splitCookies.find( c => c.trim().startsWith('expiresAt='));
+        // console.log("expiresAtCookies :",expiresAtCookie);
+        // const expiresAtArray = expiresAtCookie.split('=');
+        // console.log("expiresAtArray :",expiresAtArray);
+        // const expiresAt = expiresAtArray[1];
+        // console.log("expiresAt : ",expiresAt);
+
+        var expiresAt = expiresAtCookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
+
+        if (!expiresAtCookie) {
+          return undefined;
+        }
+
+        ; // Return undefined if the expiresAtCookie is not available
+
+        return new Date().getTime() < expiresAt;
+      }
     }
   }]);
 
@@ -106,4 +141,4 @@ var auth0Client = new Auth0();
 /***/ })
 
 })
-//# sourceMappingURL=callback.js.eb03380627413304ab93.hot-update.js.map
+//# sourceMappingURL=index.js.314c42c122f52cdbc59d.hot-update.js.map

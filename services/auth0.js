@@ -53,6 +53,10 @@ class Auth0{
             clientID: 'pcZ8trYSuvn2qMqE720lSdIPaBQPSHLE'
         })
     }
+    
+    login(){
+        this.auth0.authorize();
+    }
 
     isAuthenticated(){ // fn() to check if the current time is past the Access Token's expiry time
 
@@ -60,10 +64,37 @@ class Auth0{
         return new Date().getTime() < expiresAt;
     }
 
-    login(){
-        this.auth0.authorize();
+    clientAuth(){
+        return this.isAuthenticated();
     }
 
+    serverAuth(req){ //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
+    // The cookies on the server may be found in the request obj
+        if(req.headers.cookie){
+            const expiresAtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('expiresAt='));
+
+            // const cookies = req.headers.cookie;
+            // console.log("req.headers.cookie :",cookies);
+            // const splitCookies = cookies.split(';');
+            // console.log("splitCookies :",splitCookies);
+            // const expiresAtCookie = splitCookies.find( c => c.trim().startsWith('expiresAt='));
+            // console.log("expiresAtCookies :",expiresAtCookie);
+            // const expiresAtArray = expiresAtCookie.split('=');
+            // console.log("expiresAtArray :",expiresAtArray);
+            // const expiresAt = expiresAtArray[1];
+            // console.log("expiresAt : ",expiresAt);
+            
+
+            
+            if(!expiresAtCookie) {return undefined}; // Return undefined if the expiresAtCookie is not available
+            
+            const expiresAt = expiresAtCookie.split('=')[1];// split() => returns array of expiresAt text, where 2nd value'[1]' is date
+
+            return new Date().getTime() < expiresAt;
+
+        }
+
+    }
 }
 
 const auth0Client = new Auth0();
