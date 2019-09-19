@@ -411,14 +411,46 @@ function () {
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_0___default.a.WebAuth({
       domain: 'guhaprasaanth.auth0.com',
       clientID: 'pcZ8trYSuvn2qMqE720lSdIPaBQPSHLE',
+      // ClienID from Auth0
       redirectUri: 'http://localhost:4000/callback',
       responseType: 'token id_token',
       scope: 'openid profile'
     });
     this.login = this.login.bind(this);
+    this.handleAuthentication = this.handleAuthentication.bind(this);
   }
 
   _createClass(Auth0, [{
+    key: "handleAuthentication",
+    value: function handleAuthentication() {
+      var _this = this;
+
+      return new Promise(function (resolve, reject) {
+        _this.auth0.parseHash(function (err, authResult) {
+          //parseHash() will parse the hash in the url and returns authResult
+          // using the authResult returned by parseHash, it can be determined if the user is logged in or not
+          if (authResult && authResult.accessToken && authResult.idToken) {
+            _this.setSession(authResult);
+
+            resolve();
+          } else if (err) {
+            reject(err);
+            console.log(err);
+          }
+        });
+      });
+    }
+  }, {
+    key: "setSession",
+    value: function setSession(authResult) {// debugger;
+      // // Set the Token expiration time
+      // const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+      // // localStorage.setItem('access_token', authResult.accessToken);
+      // Cookies.set('user', authResult.idTokenPayload);
+      // Cookies.set('jwt', authResult.idToken);
+      // Cookies.set('expiesAt', expiresAt);
+    }
+  }, {
     key: "login",
     value: function login() {
       this.auth0.authorize();
