@@ -7,7 +7,7 @@ const BaseLayout = (props) => {
 
     return (
         <React.Fragment>
-            <Header isAuthenticated={isAuthenticated} />
+            <Header isAuthenticated={isAuthenticated } />
             <main className={`cover ${className}`}>
                 <div className="wrapper">
                     {children}

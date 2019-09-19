@@ -21,14 +21,14 @@ export default class MyApp extends app{
         let pageProps = {}
         // getInitialProps is a best choice to check if the user is authenticated or not, as it runs on both the client and serve,-
         //- for every pages in the application
-        const isAuthenticated = process.browser ? auth0.clientAuth() : auth0.serverAuth(ctx.req);
+        const user = process.browser ? auth0.clientAuth() : auth0.serverAuth(ctx.req);
         // Check the enviroment where getInitialProps() is currently executed and call the appropriate Authenticaiton fn() 
 
         if(Component.getInitialProps){ // Check if the component has getInitialProps()
             pageProps = await Component.getInitialProps(ctx) // Get the parameters for the page here
         }
 
-        const auth = { isAuthenticated }; // Retrieve isAuthenticated value
+        const auth = { user, isAuthenticated: !!user }; // Retrieve isAuthenticated value
 
         return { pageProps, auth }; // Pass the page params as props
     }

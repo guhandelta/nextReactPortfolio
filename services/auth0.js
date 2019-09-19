@@ -1,5 +1,6 @@
 import auth0 from 'auth0-js';
 import Cookies from 'js-cookie';
+import jwt from 'jsonwebtoken';
 
 class Auth0{
     constructor(){
@@ -64,36 +65,40 @@ class Auth0{
         return new Date().getTime() < expiresAt;
     }
 
-    clientAuth(){
-        return this.isAuthenticated();
+    verifyToken(token){
+        if(token){
+            const decodedToken = jwt.decode(token);
+            const expiresAt = decodedToken.exp * 1000;
+
+            // If a decoded token exists && time is < expiresAt
+            return (decodedToken && new Date().getTime() < expiresAt) ? decodedToken : undefined;
+        }
+
+        // If there is no token
+        return undefined;
     }
+
+    clientAuth(){
+        const token = Cookies.getJSON('jwt')    
+        const verifiedToken = this.verifyToken(token);
+
+        return verifiedToken;
+    };
+
 
     serverAuth(req){ //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
     // The cookies on the server may be found in the request obj
         if(req.headers.cookie){
-            const expiresAtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('expiresAt='));
-
-            // const cookies = req.headers.cookie;
-            // console.log("req.headers.cookie :",cookies);
-            // const splitCookies = cookies.split(';');
-            // console.log("splitCookies :",splitCookies);
-            // const expiresAtCookie = splitCookies.find( c => c.trim().startsWith('expiresAt='));
-            // console.log("expiresAtCookies :",expiresAtCookie);
-            // const expiresAtArray = expiresAtCookie.split('=');
-            // console.log("expiresAtArray :",expiresAtArray);
-            // const expiresAt = expiresAtArray[1];
-            // console.log("expiresAt : ",expiresAt);
+            const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt'));
             
-
+            if(!tokenCookie) {return undefined}; // Return undefined if the expiresAtCookie is not available
             
-            if(!expiresAtCookie) {return undefined}; // Return undefined if the expiresAtCookie is not available
-            
-            const expiresAt = expiresAtCookie.split('=')[1];// split() => returns array of expiresAt text, where 2nd value'[1]' is date
+            const token = tokenCookie.split('=')[1];// split() => returns array of expiresAt text, where 2nd value'[1]' is date
+            const verifiedToken = this.verifyToken(token);
 
-            return new Date().getTime() < expiresAt;
-
+            return verifiedToken;
         }
-
+        return undefined;
     }
 }
 

@@ -194,7 +194,7 @@ function (_app) {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var Component, router, ctx, pageProps, isAuthenticated, auth;
+        var Component, router, ctx, pageProps, user, auth;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -203,7 +203,7 @@ function (_app) {
                 pageProps = {}; // getInitialProps is a best choice to check if the user is authenticated or not, as it runs on both the client and serve,-
                 //- for every pages in the application
 
-                isAuthenticated =  false ? undefined : _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].serverAuth(ctx.req); // Check the enviroment where getInitialProps() is currently executed and call the appropriate Authenticaiton fn() 
+                user =  false ? undefined : _services_auth0__WEBPACK_IMPORTED_MODULE_3__["default"].serverAuth(ctx.req); // Check the enviroment where getInitialProps() is currently executed and call the appropriate Authenticaiton fn() 
 
                 if (!Component.getInitialProps) {
                   _context.next = 7;
@@ -218,7 +218,8 @@ function (_app) {
 
               case 7:
                 auth = {
-                  isAuthenticated: isAuthenticated
+                  user: user,
+                  isAuthenticated: !!user
                 }; // Retrieve isAuthenticated value
 
                 return _context.abrupt("return", {
@@ -262,11 +263,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js-cookie */ "js-cookie");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_2__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -346,9 +350,24 @@ function () {
       return new Date().getTime() < expiresAt;
     }
   }, {
+    key: "verifyToken",
+    value: function verifyToken(token) {
+      if (token) {
+        var decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default.a.decode(token);
+        var expiresAt = decodedToken.exp * 1000; // If a decoded token exists && time is < expiresAt
+
+        return decodedToken && new Date().getTime() < expiresAt ? decodedToken : undefined;
+      } // If there is no token
+
+
+      return undefined;
+    }
+  }, {
     key: "clientAuth",
     value: function clientAuth() {
-      return this.isAuthenticated();
+      var token = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON('jwt');
+      var verifiedToken = this.verifyToken(token);
+      return verifiedToken;
     }
   }, {
     key: "serverAuth",
@@ -356,29 +375,23 @@ function () {
       //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
       // The cookies on the server may be found in the request obj
       if (req.headers.cookie) {
-        var expiresAtCookie = req.headers.cookie.split(';').find(function (c) {
-          return c.trim().startsWith('expiresAt=');
-        }); // const cookies = req.headers.cookie;
-        // console.log("req.headers.cookie :",cookies);
-        // const splitCookies = cookies.split(';');
-        // console.log("splitCookies :",splitCookies);
-        // const expiresAtCookie = splitCookies.find( c => c.trim().startsWith('expiresAt='));
-        // console.log("expiresAtCookies :",expiresAtCookie);
-        // const expiresAtArray = expiresAtCookie.split('=');
-        // console.log("expiresAtArray :",expiresAtArray);
-        // const expiresAt = expiresAtArray[1];
-        // console.log("expiresAt : ",expiresAt);
+        var tokenCookie = req.headers.cookie.split(';').find(function (c) {
+          return c.trim().startsWith('jwt');
+        });
 
-        if (!expiresAtCookie) {
+        if (!tokenCookie) {
           return undefined;
         }
 
         ; // Return undefined if the expiresAtCookie is not available
 
-        var expiresAt = expiresAtCookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
+        var token = tokenCookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
 
-        return new Date().getTime() < expiresAt;
+        var verifiedToken = this.verifyToken(token);
+        return verifiedToken;
       }
+
+      return undefined;
     }
   }]);
 
@@ -443,6 +456,17 @@ module.exports = require("auth0-js");
 /***/ (function(module, exports) {
 
 module.exports = require("js-cookie");
+
+/***/ }),
+
+/***/ "jsonwebtoken":
+/*!*******************************!*\
+  !*** external "jsonwebtoken" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jsonwebtoken");
 
 /***/ }),
 

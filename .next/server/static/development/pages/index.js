@@ -88,43 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./components/BasePage.js":
-/*!********************************!*\
-  !*** ./components/BasePage.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-var BasePage = function BasePage(props) {
-  var className = props.className;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "base-page ".concat(className)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], null, props.children));
-};
-
-BasePage.propTypes = {
-  className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.any.isRequired
-};
-/* harmony default export */ __webpack_exports__["default"] = (BasePage);
-
-/***/ }),
 
 /***/ "./components/layouts/BaseLayout.js":
 /*!******************************************!*\
@@ -309,32 +276,25 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./pages/portfolio.js":
-/*!****************************!*\
-  !*** ./pages/portfolio.js ***!
-  \****************************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var _components_BasePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BasePage */ "./components/BasePage.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-typed */ "react-typed");
+/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_typed__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -357,81 +317,76 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-var Portfolio =
+var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Portfolio, _React$Component);
+  _inherits(Index, _React$Component);
 
-  function Portfolio() {
-    _classCallCheck(this, Portfolio);
+  function Index(props) {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).apply(this, arguments));
+    _classCallCheck(this, Index);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
+    _this.roles = ["Tech Lover", "Team Player", "UI Developer", "Full Stack Web Developer", "Nature Enthusiast", "Blockchain Developer"];
+    return _this;
   }
 
-  _createClass(Portfolio, [{
+  _createClass(Index, [{
     key: "render",
     value: function render() {
-      var portfolio = this.props.portfolio;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        className: "portfolio-page"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " ", portfolio.title, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, " Body: ", portfolio.body, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, " ID: ", portfolio.id, " ")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({
+        className: "cover"
+      }, this.props.auth), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/static/images/background-index.png"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flipper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "back"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-section-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, " Full Stack Web Developer "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-section-content-intro"
+      }, "Checkout my portfolio and job history.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "image",
+        src: "/static/images/section-1.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "shadow-custom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "shadow-inner"
+      }, " ")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: "6",
+        className: "hero-welcome-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-welcome-text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to the portfolio website of Guhaprasaanth Nandagopal. Get informed, collaborate and discover projects I was working on through the years!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_typed__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        loop: true,
+        typeSpeed: 60,
+        backSpeed: 60,
+        backDelay: 1000,
+        strings: this.roles,
+        loopCount: 0,
+        showCursor: true,
+        className: "self-typed",
+        cursorChar: "|"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-welcome-bio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Let's take a look on my work.")))))));
     }
-  }], [{
-    key: "getInitialProps",
-    value: function () {
-      var _getInitialProps = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var query, portfolioId, portfolio, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                query = _ref.query;
-                // Destructurizing the data object and extracting the query param
-                portfolioId = query.id;
-                portfolio = {};
-                _context.prev = 3;
-                _context.next = 6;
-                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.get("https://jsonplaceholder.typicode.com/posts/".concat(portfolioId));
-
-              case 6:
-                response = _context.sent;
-                portfolio = response.data;
-                _context.next = 13;
-                break;
-
-              case 10:
-                _context.prev = 10;
-                _context.t0 = _context["catch"](3);
-                console.log(_context.t0);
-
-              case 13:
-                return _context.abrupt("return", {
-                  portfolio: portfolio
-                });
-
-              case 14:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, null, [[3, 10]]);
-      }));
-
-      function getInitialProps(_x) {
-        return _getInitialProps.apply(this, arguments);
-      }
-
-      return getInitialProps;
-    }()
   }]);
 
-  return Portfolio;
-}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+  return Index;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Portfolio));
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -448,11 +403,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js-cookie */ "js-cookie");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_2__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -532,9 +490,24 @@ function () {
       return new Date().getTime() < expiresAt;
     }
   }, {
+    key: "verifyToken",
+    value: function verifyToken(token) {
+      if (token) {
+        var decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_2___default.a.decode(token);
+        var expiresAt = decodedToken.exp * 1000; // If a decoded token exists && time is < expiresAt
+
+        return decodedToken && new Date().getTime() < expiresAt ? decodedToken : undefined;
+      } // If there is no token
+
+
+      return undefined;
+    }
+  }, {
     key: "clientAuth",
     value: function clientAuth() {
-      return this.isAuthenticated();
+      var token = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON('jwt');
+      var verifiedToken = this.verifyToken(token);
+      return verifiedToken;
     }
   }, {
     key: "serverAuth",
@@ -542,29 +515,23 @@ function () {
       //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
       // The cookies on the server may be found in the request obj
       if (req.headers.cookie) {
-        var expiresAtCookie = req.headers.cookie.split(';').find(function (c) {
-          return c.trim().startsWith('expiresAt=');
-        }); // const cookies = req.headers.cookie;
-        // console.log("req.headers.cookie :",cookies);
-        // const splitCookies = cookies.split(';');
-        // console.log("splitCookies :",splitCookies);
-        // const expiresAtCookie = splitCookies.find( c => c.trim().startsWith('expiresAt='));
-        // console.log("expiresAtCookies :",expiresAtCookie);
-        // const expiresAtArray = expiresAtCookie.split('=');
-        // console.log("expiresAtArray :",expiresAtArray);
-        // const expiresAt = expiresAtArray[1];
-        // console.log("expiresAt : ",expiresAt);
+        var tokenCookie = req.headers.cookie.split(';').find(function (c) {
+          return c.trim().startsWith('jwt');
+        });
 
-        if (!expiresAtCookie) {
+        if (!tokenCookie) {
           return undefined;
         }
 
         ; // Return undefined if the expiresAtCookie is not available
 
-        var expiresAt = expiresAtCookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
+        var token = tokenCookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
 
-        return new Date().getTime() < expiresAt;
+        var verifiedToken = this.verifyToken(token);
+        return verifiedToken;
       }
+
+      return undefined;
     }
   }]);
 
@@ -576,26 +543,15 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
-/***/ 9:
-/*!**********************************!*\
-  !*** multi ./pages/portfolio.js ***!
-  \**********************************/
+/***/ 3:
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/portfolio.js */"./pages/portfolio.js");
+module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "@babel/runtime/regenerator":
-/*!*********************************************!*\
-  !*** external "@babel/runtime/regenerator" ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
@@ -610,17 +566,6 @@ module.exports = require("auth0-js");
 
 /***/ }),
 
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-
 /***/ "js-cookie":
 /*!****************************!*\
   !*** external "js-cookie" ***!
@@ -629,6 +574,17 @@ module.exports = require("axios");
 /***/ (function(module, exports) {
 
 module.exports = require("js-cookie");
+
+/***/ }),
+
+/***/ "jsonwebtoken":
+/*!*******************************!*\
+  !*** external "jsonwebtoken" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jsonwebtoken");
 
 /***/ }),
 
@@ -643,28 +599,6 @@ module.exports = require("next/link");
 
 /***/ }),
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
-
-/***/ }),
-
-/***/ "prop-types":
-/*!*****************************!*\
-  !*** external "prop-types" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -673,6 +607,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-typed":
+/*!******************************!*\
+  !*** external "react-typed" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-typed");
 
 /***/ }),
 
@@ -688,4 +633,4 @@ module.exports = require("reactstrap");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=portfolio.js.map
+//# sourceMappingURL=index.js.map
