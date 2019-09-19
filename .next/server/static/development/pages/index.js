@@ -546,7 +546,7 @@ function () {
             switch (_context2.prev = _context2.next) {
               case 0:
                 if (!token) {
-                  _context2.next = 19;
+                  _context2.next = 21;
                   break;
                 }
 
@@ -556,10 +556,18 @@ function () {
                   complete: true
                 }); // The property, complete should be specified to access the header of the token
 
-                _context2.next = 4;
-                return this.getJWKS();
+                if (decodedToken) {
+                  _context2.next = 4;
+                  break;
+                }
+
+                return _context2.abrupt("return", undefined);
 
               case 4:
+                _context2.next = 6;
+                return this.getJWKS();
+
+              case 6:
                 jwks = _context2.sent;
                 // returns array(object)) of keys
                 jwk = jwks.keys[0]; // Build Certificate
@@ -572,30 +580,30 @@ function () {
                 cert = "-----BEGIN CERTIFICATE-----\n".concat(cert, "\n-----END CERTIFICATE-----\n"); // Compare the kid(Key ID) property of the token and the public key
 
                 if (!(jwk.kid === decodedToken.header.kid)) {
-                  _context2.next = 19;
+                  _context2.next = 21;
                   break;
                 }
 
-                _context2.prev = 10;
+                _context2.prev = 12;
                 verifiedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.verify(token, cert);
                 expiresAt = verifiedToken.exp * 1000; // If a decoded token exists && current time is < expiresAt
 
                 return _context2.abrupt("return", verifiedToken && new Date().getTime() < expiresAt ? verifiedToken : undefined);
 
-              case 16:
-                _context2.prev = 16;
-                _context2.t0 = _context2["catch"](10);
+              case 18:
+                _context2.prev = 18;
+                _context2.t0 = _context2["catch"](12);
                 return _context2.abrupt("return", undefined);
 
-              case 19:
+              case 21:
                 return _context2.abrupt("return", undefined);
 
-              case 20:
+              case 22:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[10, 16]]);
+        }, _callee2, this, [[12, 18]]);
       }));
 
       function verifyToken(_x) {

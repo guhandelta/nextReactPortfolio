@@ -69,6 +69,7 @@ class Auth0{
             //- issued by authorization server(Auth0 in this application) and signed using the RS256 
             const decodedToken = jwt.decode(token, {complete: true}); 
             // The property, complete should be specified to access the header of the token
+            if(!decodedToken) { return undefined; } // Logout the user and not display "Internal Server Error", when JWT token is chaanged
             const jwks = await this.getJWKS(); // returns array(object)) of keys
             const jwk = jwks.keys[0];
             // Build Certificate
