@@ -473,13 +473,14 @@ function () {
     }
   }, {
     key: "setSession",
-    value: function setSession(authResult) {// debugger;
-      // // Set the Token expiration time
-      // const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-      // // localStorage.setItem('access_token', authResult.accessToken);
-      // Cookies.set('user', authResult.idTokenPayload);
-      // Cookies.set('jwt', authResult.idToken);
-      // Cookies.set('expiesAt', expiresAt);
+    value: function setSession(authResult) {
+      debugger; // Set the Token expiration time
+
+      var expiresAt = JSON.stringify(authResult.expiresIn * 1000 + new Date().getTime()); // localStorage.setItem('access_token', authResult.accessToken);
+
+      Cookies.set('user', authResult.idTokenPayload);
+      Cookies.set('jwt', authResult.idToken);
+      Cookies.set('expiresAt', expiresAt);
     }
   }, {
     key: "login",
