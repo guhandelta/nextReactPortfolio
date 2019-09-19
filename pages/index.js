@@ -47,7 +47,7 @@ class Index extends React.Component{
                         { isAuthenticated && <span>Hello <b>{user.name}</b> </span> }
                       </h1>
                       <h2>
-                        Welcome to my portfolio website<website></website>.
+                        Welcome to my portfolio website.
                         Get informed, collaborate and discover projects I was working on through the years!
                       </h2>
                     </div>

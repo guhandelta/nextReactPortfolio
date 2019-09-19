@@ -1,6 +1,7 @@
 import auth0 from 'auth0-js';
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
+import axios from 'axios';
 
 class Auth0{
     constructor(){
@@ -57,29 +58,55 @@ class Auth0{
         this.auth0.authorize();
     }
 
-    verifyToken(token){
-        if(token){
-            const decodedToken = jwt.decode(token);
-            const expiresAt = decodedToken.exp * 1000;
+    async getJWKS(){
+        const res = await axios.get('https://guhaprasaanth.auth0.com/.well-known/jwks.json'); // get req to this endpoint to get JWKS
+        const jwks = res.data;
+        return jwks;
+    }
 
-            // If a decoded token exists && current time is < expiresAt
-            return (decodedToken && new Date().getTime() < expiresAt) ? decodedToken : undefined;
+    async verifyToken(token){
+        if(token){ // JWKS => JSON Web Key -> set of public keys that are used to verify JWT, 
+            //- issued by authorization server(Auth0 in this application) and signed using the RS256 
+            const decodedToken = jwt.decode(token, {complete: true}); 
+            // The property, complete should be specified to access the header of the token
+            const jwks = await this.getJWKS(); // returns array(object)) of keys
+            const jwk = jwks.keys[0];
+            // Build Certificate
+            let cert = jwk.x5c[0];// Extracting the certificate
+            cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long, 
+            // which is later joined with a new line
+            cert = `-----BEGIN CERTIFICATE-----\n${cert}\n-----END CERTIFICATE-----\n`
+            // Compare the kid(Key ID) property of the token and the public key
+            
+            if(jwk.kid === decodedToken.header.kid){
+                try{
+                    const verifiedToken = jwt.verify(token, cert);
+                    const expiresAt = verifiedToken.exp * 1000;
+                    // If a decoded token exists && current time is < expiresAt
+                    return (verifiedToken && new Date().getTime() < expiresAt) ? verifiedToken : undefined;
+
+                }catch(err){
+                    return undefined;
+                }
+            }
+
+
         }
 
         // If there is no token
         return undefined;
     }
 
-    clientAuth(){
+    async clientAuth(){
         debugger;
         const token = Cookies.getJSON('jwt')    
-        const verifiedToken = this.verifyToken(token);
+        const verifiedToken = await this.verifyToken(token);
 
         return verifiedToken;
     };
 
 
-    serverAuth(req){ //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
+    async serverAuth(req){ //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
     // The cookies on the server may be found in the request obj
         if(req.headers.cookie){
             const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt'));
@@ -87,7 +114,7 @@ class Auth0{
             if(!tokenCookie) {return undefined}; // Return undefined if the expiresAtCookie is not available
             
             const token = tokenCookie.split('=')[1];// split() => returns array of expiresAt text, where 2nd value'[1]' is date
-            const verifiedToken = this.verifyToken(token);
+            const verifiedToken = await this.verifyToken(token);
 
             return verifiedToken;
         }
