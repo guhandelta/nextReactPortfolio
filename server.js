@@ -19,15 +19,13 @@ app.prepare()
     //     app.render(req, res, actualPage, queryParams)
     // }) ==> This block is not required anymore as this functionality is taken care by next/routes
 
-    
-
     server.get('*', (req,res) => {
         return handle(req,res)
     })
 
     server.use(handle).listen(4000, (err) =>{
         if (err) throw err
-        console.log('> Ready on http://localhost:3000')
+        console.log('===> Server Running on http://localhost:4000')
     })
 })
 .catch((ex) => {
