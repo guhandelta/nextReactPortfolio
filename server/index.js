@@ -28,7 +28,7 @@ app.prepare()
 
         return res.json(secretData);
     })
-    
+
     // This block handles specific requests, and is placed before server.get('*',(req,res) =>{-
     // -as the control never crosses that block, to enter this block, and this block never gets executed
     // * is the wild card here

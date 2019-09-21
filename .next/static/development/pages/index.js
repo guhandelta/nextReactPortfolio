@@ -188,6 +188,33 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./helpers/utils.js":
+/*!**************************!*\
+  !*** ./helpers/utils.js ***!
+  \**************************/
+/*! exports provided: getCookieFromReq */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieFromReq", function() { return getCookieFromReq; });
+var getCookieFromReq = function getCookieFromReq(req, cookieKey) {
+  var cookie = req.headers.cookie.split(';').find(function (c) {
+    return c.trim().startsWith("".concat(cookieKey, " = "));
+  }); //Get cookie from header -> split it with ; -> look for the string starting with "cookie"
+
+  if (!cookie) {
+    return undefined;
+  }
+
+  ; // return undefined if there is no cookie
+
+  return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is data
+  // else return the value of the cookie
+};
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -50597,6 +50624,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -50608,6 +50636,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -50729,8 +50758,8 @@ function () {
                   break;
                 }
 
-                // JWKS => JSON Web Key -> set of public keys that are used to verify JWT, 
-                //- issued by authorization server(Auth0 in this application) and signed using the RS256 
+                // JWKS => JSON Web Key -> set of public keys that are used to verify JWT,
+                //- issued by authorization server(Auth0 in this application) and signed using the RS256
                 decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.decode(token, {
                   complete: true
                 }); // The property, complete should be specified to access the header of the token
@@ -50753,7 +50782,7 @@ function () {
 
                 cert = jwk.x5c[0]; // Extracting the certificate
 
-                cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long, 
+                cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long,
                 // which is later joined with a new line
 
                 cert = "-----BEGIN CERTIFICATE-----\n".concat(cert, "\n-----END CERTIFICATE-----\n"); // Compare the kid(Key ID) property of the token and the public key
@@ -50831,43 +50860,28 @@ function () {
       var _serverAuth = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(req) {
-        var tokenCookie, token, verifiedToken;
+        var token, verifiedToken;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 if (!req.headers.cookie) {
-                  _context4.next = 10;
+                  _context4.next = 6;
                   break;
                 }
 
-                tokenCookie = req.headers.cookie.split(';').find(function (c) {
-                  return c.trim().startsWith('jwt');
-                });
-
-                if (tokenCookie) {
-                  _context4.next = 4;
-                  break;
-                }
-
-                return _context4.abrupt("return", undefined);
-
-              case 4:
-                ; // Return undefined if the expiresAtCookie is not available
-
-                token = tokenCookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
-
-                _context4.next = 8;
+                token = Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+                _context4.next = 4;
                 return this.verifyToken(token);
 
-              case 8:
+              case 4:
                 verifiedToken = _context4.sent;
                 return _context4.abrupt("return", verifiedToken);
 
-              case 10:
+              case 6:
                 return _context4.abrupt("return", undefined);
 
-              case 11:
+              case 7:
               case "end":
                 return _context4.stop();
             }
@@ -50888,6 +50902,20 @@ function () {
 
 var auth0Client = new Auth0();
 /* harmony default export */ __webpack_exports__["default"] = (auth0Client);
+
+/***/ }),
+
+/***/ 11:
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__NEXT_REGISTER_PAGE('/', function() {
+module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
+
+return { page: module.exports.default }});
 
 /***/ }),
 
@@ -50935,20 +50963,6 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
-/***/ 9:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__NEXT_REGISTER_PAGE('/', function() {
-module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
-
-return { page: module.exports.default }});
-
-/***/ }),
-
 /***/ "dll-reference dll_5a69c71dbdf1d30ccbcd":
 /*!*******************************************!*\
   !*** external "dll_5a69c71dbdf1d30ccbcd" ***!
@@ -50960,5 +50974,5 @@ module.exports = dll_5a69c71dbdf1d30ccbcd;
 
 /***/ })
 
-},[[9,"static/runtime/webpack.js"]]]));;
+},[[11,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map

@@ -3,13 +3,15 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/BasePage';
 
 import withAuth from '../components/hoc/withAuth';
-import { getSecretData } from '../actions/index';
+import { getSecretData, getSecretDataServer } from '../actions';
 
 class Secret extends React.Component {
-    static getInitialProps(){
-        const superSecretValue = 'Super Secret Value';
 
-        return { superSecretValue };
+    static async getInitialProps({req}){
+        const anotherSecretData = await getSecretData(req);
+        // call getSecretData() if the call is made from the browser or call getSecretDataServer() if the call is made from server
+
+        return { anotherSecretData };
     }
 
     state ={
@@ -27,10 +29,10 @@ class Secret extends React.Component {
     displaySecretData(){
         const { secretData } = this.state;
 
-        if(secretData && secretData.length>0){
+        if( secretData && secretData.length>0 ){
             return secretData.map((data, index) => {
                 return(
-                    <div key={index}>
+                    <div key={ index }>
                         <p> { data.title } </p>
                         <p> { data.description } </p>
                     </div>
@@ -41,12 +43,13 @@ class Secret extends React.Component {
     }
 
     render() {
+        debugger;
         return (
             <BaseLayout {...this.props.auth}>
                 <BasePage>
                     <h1>Welcome to the Hood!!....</h1>
                     <p>This is a Protected Page</p>
-                    <h3>{ this.props.superSecretValue }</h3>
+                    <h3>{ this.props.anotherSecretData }</h3>
                     {this.displaySecretData()}
                 </BasePage>
             </BaseLayout>

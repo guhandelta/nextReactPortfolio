@@ -3,6 +3,8 @@ import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 
+import { getCookieFromReq } from '../helpers/utils';
+
 class Auth0{
     constructor(){
         this.auth0 = new auth0.WebAuth({
@@ -32,7 +34,7 @@ class Auth0{
             });
         });
     }
-    
+
     setSession(authResult){
         // Set the Token expiration time
         const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
@@ -53,7 +55,7 @@ class Auth0{
             clientID: 'pcZ8trYSuvn2qMqE720lSdIPaBQPSHLE'
         })
     }
-    
+
     login(){
         this.auth0.authorize();
     }
@@ -65,24 +67,24 @@ class Auth0{
     }
 
     async verifyToken(token){
-        if(token){ // JWKS => JSON Web Key -> set of public keys that are used to verify JWT, 
-            //- issued by authorization server(Auth0 in this application) and signed using the RS256 
-            const decodedToken = jwt.decode(token, {complete: true}); 
+        if(token){ // JWKS => JSON Web Key -> set of public keys that are used to verify JWT,
+            //- issued by authorization server(Auth0 in this application) and signed using the RS256
+            const decodedToken = jwt.decode(token, {complete: true});
             // The property, complete should be specified to access the header of the token
 
             if(!decodedToken) { return undefined; } // Logout the user and not display "Internal Server Error", when JWT token is chaanged
 
             const jwks = await this.getJWKS(); // returns array(object)) of keys
-            
+
             const jwk = jwks.keys[0];
-            
+
             // Build Certificate
             let cert = jwk.x5c[0];// Extracting the certificate
-            cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long, 
+            cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long,
             // which is later joined with a new line
             cert = `-----BEGIN CERTIFICATE-----\n${cert}\n-----END CERTIFICATE-----\n`
             // Compare the kid(Key ID) property of the token and the public key
-            
+
             if(jwk.kid === decodedToken.header.kid){
                 try{
                     const verifiedToken = jwt.verify(token, cert);
@@ -95,7 +97,6 @@ class Auth0{
                 }
             }
 
-
         }
 
         // If there is no token
@@ -104,7 +105,7 @@ class Auth0{
 
     async clientAuth(){
         debugger;
-        const token = Cookies.getJSON('jwt')    
+        const token = Cookies.getJSON('jwt');
         const verifiedToken = await this.verifyToken(token);
 
         return verifiedToken;
@@ -114,11 +115,8 @@ class Auth0{
     async serverAuth(req){ //The request obj(req) is available in the server side from the prop 'ctx' passed into getInitialProps()
     // The cookies on the server may be found in the request obj
         if(req.headers.cookie){
-            const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt'));
-            
-            if(!tokenCookie) {return undefined}; // Return undefined if the expiresAtCookie is not available
-            
-            const token = tokenCookie.split('=')[1];// split() => returns array of expiresAt text, where 2nd value'[1]' is date
+
+            const token = getCookieFromReq(req, 'jwt');
             const verifiedToken = await this.verifyToken(token);
 
             return verifiedToken;
