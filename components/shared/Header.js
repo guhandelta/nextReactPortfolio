@@ -10,7 +10,10 @@ import {
     NavLink
     } from 'reactstrap';
 import auth0 from '../../services/auth0';
+<<<<<<< HEAD
 import { userInfo } from 'os';
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 
 const BstrNavLink = (props) => {
     const { route, title } = props;  //  .Login} 

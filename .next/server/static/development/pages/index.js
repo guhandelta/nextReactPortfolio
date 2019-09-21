@@ -144,8 +144,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _services_auth0__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth0 */ "./services/auth0.js");
+<<<<<<< HEAD
 /* harmony import */ var os__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! os */ "os");
 /* harmony import */ var os__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_4__);
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -169,7 +172,10 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 var BstrNavLink = function BstrNavLink(props) {
   var route = props.route,
       title = props.title; //  .Login} 
@@ -435,6 +441,7 @@ function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! auth0-js */ "auth0-js");
@@ -452,6 +459,10 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+=======
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! auth0-js */ "auth0-js");
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_0__);
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -460,25 +471,36 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 var Auth0 =
 /*#__PURE__*/
 function () {
   function Auth0() {
     _classCallCheck(this, Auth0);
 
+<<<<<<< HEAD
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_1___default.a.WebAuth({
       domain: 'guhaprasaanth.auth0.com',
       clientID: 'pcZ8trYSuvn2qMqE720lSdIPaBQPSHLE',
       // ClienID from Auth0
       redirectUri: 'http://localhost:4000/callback',
+=======
+    this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_0___default.a.WebAuth({
+      domain: 'guhaprasaanth.auth0.com',
+      clientID: '9FZS9U2vIrNSpKP9hECiZM3w4pPFzDqm',
+      redirecUrl: 'http://loalhost:4000/callback',
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
       responseType: 'token id_token',
       scope: 'openid profile'
     });
     this.login = this.login.bind(this);
+<<<<<<< HEAD
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.logout = this.logout.bind(this);
   }
@@ -525,10 +547,16 @@ function () {
       });
     }
   }, {
+=======
+  }
+
+  _createClass(Auth0, [{
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
     key: "login",
     value: function login() {
       this.auth0.authorize();
     }
+<<<<<<< HEAD
   }, {
     key: "getJWKS",
     value: function () {
@@ -716,6 +744,8 @@ function () {
 
       return serverAuth;
     }()
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
   }]);
 
   return Auth0;
@@ -726,7 +756,11 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 5:
+=======
+/***/ 3:
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -738,6 +772,7 @@ module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "@babel/runtime/regenerator":
 /*!*********************************************!*\
   !*** external "@babel/runtime/regenerator" ***!
@@ -749,6 +784,8 @@ module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 /***/ "auth0-js":
 /*!***************************!*\
   !*** external "auth0-js" ***!
@@ -760,6 +797,7 @@ module.exports = require("auth0-js");
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "axios":
 /*!************************!*\
   !*** external "axios" ***!
@@ -793,6 +831,8 @@ module.exports = require("jsonwebtoken");
 
 /***/ }),
 
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 /***/ "next/link":
 /*!****************************!*\
   !*** external "next/link" ***!

@@ -545,7 +545,7 @@ module.exports = _typeof;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/next/node_modules/regenerator-runtime/runtime-module.js");
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
 
 
 /***/ }),
@@ -5344,10 +5344,32 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd
 
 /***/ }),
 
-/***/ "./node_modules/next/node_modules/regenerator-runtime/runtime-module.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/next/node_modules/regenerator-runtime/runtime-module.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/object-assign/index.js":
+/*!***************************************************************************************************!*\
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd */ "dll-reference dll_5a69c71dbdf1d30ccbcd"))("./node_modules/object-assign/index.js");
+
+/***/ }),
+
+/***/ "./node_modules/react/index.js":
+/*!*******************************************************************************************!*\
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd */ "dll-reference dll_5a69c71dbdf1d30ccbcd"))("./node_modules/react/index.js");
+
+/***/ }),
+
+/***/ "./node_modules/regenerator-runtime/runtime-module.js":
+/*!************************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5375,7 +5397,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/next/node_modules/regenerator-runtime/runtime.js");
+module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/regenerator-runtime/runtime.js");
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -5392,10 +5414,10 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ "./node_modules/next/node_modules/regenerator-runtime/runtime.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/next/node_modules/regenerator-runtime/runtime.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -6124,6 +6146,7 @@ if (hadRuntime) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
   !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
@@ -6147,6 +6170,9 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd
 /***/ }),
 
 /***/ 8:
+=======
+/***/ 4:
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
 /*!******************************************************!*\
   !*** multi ./node_modules/next/dist/pages/_error.js ***!
   \******************************************************/
