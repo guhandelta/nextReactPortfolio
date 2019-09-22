@@ -13,7 +13,7 @@ class Portfolio extends React.Component {
         try{
             const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${portfolioId}`);
             portfolio = response.data;
-        }catch(err){
+        }catch(err){    
             console.log(err);
         }
 
@@ -23,7 +23,7 @@ class Portfolio extends React.Component {
     render() {
         const { portfolio } = this.props;
         return (
-            <BaseLayout>
+            <BaseLayout {...this.props.auth}>
                 <BasePage className="portfolio-page">
                     <h1> {portfolio.title} </h1>
                     <p> Body: {portfolio.body} </p>

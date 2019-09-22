@@ -9,13 +9,13 @@ class Index extends React.Component{
     constructor(props){
         super(props);
 
-        this.roles=["Tech Lover", "Team Player", "UI Developer", "Full Stack Web Developer", "Nature Enthusiast", "Blockchain Developer"];
+        this.roles=["Tech Lover", "Team Player", "UI Developer", "Full Stack Web Developer", "Nature Enthusiast", "Blockchain Developer", "Dog Lover", "Machine Learning Enthusiast"];
     }
-    
+ 
     render(){
-
+      const { isAuthenticated, user } = this.props.auth; 
         return(
-            <BaseLayout className="cover">
+            <BaseLayout className="cover" {...this.props.auth}>
             <div className="main-section">
               <div className="background-image">
                 <img src="/static/images/background-index.png" />
@@ -44,9 +44,12 @@ class Index extends React.Component{
                   <Col md="6" className="hero-welcome-wrapper">
                     <div className="hero-welcome-text">
                       <h1>
-                        Welcome to the portfolio website of Guhaprasaanth Nandagopal.
-                        Get informed, collaborate and discover projects I was working on through the years!
+                        { isAuthenticated && <span>Hello <b>{user.name}</b> </span> }
                       </h1>
+                      <h2>
+                        Welcome to my portfolio website.
+                        Get informed, collaborate and discover projects I was working on through the years!
+                      </h2>
                     </div>
                     <Typed
                         loop
