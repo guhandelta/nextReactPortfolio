@@ -53,4 +53,4 @@ class Secret extends React.Component {
     }
 }
 
-export default withAuth(Secret);
+export default withAuth()(Secret);
