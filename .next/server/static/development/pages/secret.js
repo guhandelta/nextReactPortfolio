@@ -88,7 +88,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+=======
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -109,7 +113,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! js-cookie */ "js-cookie");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_2__);
+<<<<<<< HEAD
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/utils */ "./helper/utils.js");
+=======
 /* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -121,11 +129,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var setAuthHeader = function setAuthHeader(req) {
+<<<<<<< HEAD
+  var token = req ? Object(_helper_utils__WEBPACK_IMPORTED_MODULE_3__["getCookieFromReq"])(req, 'jwt') : js_cookie__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON('jwt');
+
+  if (token) {
+=======
   // Send the request as the input param, so the cookie/Token may be extracted
   var token = req ? Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_3__["getCookieFromReq"])(req, 'jwt') : js_cookie__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON('jwt'); // Get Cookie from req if req is available, else get it using getJSON()
 
   if (token) {
     // Set Header
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     return {
       headers: {
         'authorization': "Bearer ".concat(token)
@@ -145,7 +159,11 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+<<<<<<< HEAD
+            url = 'http://localhost:4000/api/v1/secret/';
+=======
             url = 'http://localhost:4000/api/v1/secret';
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
             _context.next = 3;
             return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url, setAuthHeader(req)).then(function (response) {
               return response.data;
@@ -268,7 +286,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
           if (isAuthenticated) {
             return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, this.props);
           } else {
+<<<<<<< HEAD
+            return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "You're not allowed to view this page, Login to view this page")));
+=======
             return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "You're not allowed to view this page, Login to view this page")), " \\");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
           }
         }
       }, {
@@ -520,10 +542,17 @@ function (_React$Component) {
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ "./helper/utils.js":
+/*!*************************!*\
+  !*** ./helper/utils.js ***!
+  \*************************/
+=======
 /***/ "./helpers/utils.js":
 /*!**************************!*\
   !*** ./helpers/utils.js ***!
   \**************************/
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /*! exports provided: getCookieFromReq */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -532,17 +561,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieFromReq", function() { return getCookieFromReq; });
 var getCookieFromReq = function getCookieFromReq(req, cookieKey) {
   var cookie = req.headers.cookie.split(';').find(function (c) {
+<<<<<<< HEAD
+    return c.trim().startsWith("".concat(cookieKey, "="));
+  });
+=======
     return c.trim().startsWith("".concat(cookieKey, " = "));
   }); //Get cookie from header -> split it with ; -> look for the string starting with "cookie"
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
   if (!cookie) {
     return undefined;
   }
 
+<<<<<<< HEAD
+  ; // Return undefined if the expiresAtCookie is not available
+
+  return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
+=======
   ; // return undefined if there is no cookie
 
   return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is data
   // else return the value of the cookie
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 };
 
 /***/ }),
@@ -563,11 +603,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
 /* harmony import */ var _components_BasePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BasePage */ "./components/BasePage.js");
 /* harmony import */ var _components_hoc_withAuth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/hoc/withAuth */ "./components/hoc/withAuth.js");
+<<<<<<< HEAD
+/* harmony import */ var _actions_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../actions/index */ "./actions/index.js");
+=======
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../actions */ "./actions/index.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+<<<<<<< HEAD
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -633,7 +682,11 @@ function (_React$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
+<<<<<<< HEAD
+                return Object(_actions_index__WEBPACK_IMPORTED_MODULE_5__["getSecretData"])();
+=======
                 return Object(_actions__WEBPACK_IMPORTED_MODULE_5__["getSecretData"])();
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
               case 2:
                 secretData = _context.sent;
@@ -674,8 +727,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+<<<<<<< HEAD
+      var superSecretValue = _objectSpread({}, this.props);
+
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Welcome to the Hood!!...."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "This is a Protected Page"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, this.props.superSecretValue), this.displaySecretData()));
+=======
       debugger;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_2__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Welcome to the Hood!!...."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "This is a Protected Page"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, this.props.anotherSecretData), this.displaySecretData()));
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     }
   }], [{
     key: "getInitialProps",
@@ -690,7 +749,11 @@ function (_React$Component) {
               case 0:
                 req = _ref.req;
                 _context2.next = 3;
+<<<<<<< HEAD
+                return Object(_actions_index__WEBPACK_IMPORTED_MODULE_5__["getSecretData"])(req);
+=======
                 return Object(_actions__WEBPACK_IMPORTED_MODULE_5__["getSecretData"])(req);
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
               case 3:
                 anotherSecretData = _context2.sent;
@@ -740,7 +803,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+<<<<<<< HEAD
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/utils */ "./helper/utils.js");
+=======
 /* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -874,8 +941,13 @@ function () {
                   break;
                 }
 
+<<<<<<< HEAD
+                // JWKS => JSON Web Key -> set of public keys that are used to verify JWT, 
+                //- issued by authorization server(Auth0 in this application) and signed using the RS256 
+=======
                 // JWKS => JSON Web Key -> set of public keys that are used to verify JWT,
                 //- issued by authorization server(Auth0 in this application) and signed using the RS256
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.decode(token, {
                   complete: true
                 }); // The property, complete should be specified to access the header of the token
@@ -898,7 +970,11 @@ function () {
 
                 cert = jwk.x5c[0]; // Extracting the certificate
 
+<<<<<<< HEAD
+                cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long, 
+=======
                 cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long,
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 // which is later joined with a new line
 
                 cert = "-----BEGIN CERTIFICATE-----\n".concat(cert, "\n-----END CERTIFICATE-----\n"); // Compare the kid(Key ID) property of the token and the public key
@@ -986,7 +1062,11 @@ function () {
                   break;
                 }
 
+<<<<<<< HEAD
+                token = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+=======
                 token = Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 _context4.next = 4;
                 return this.verifyToken(token);
 
@@ -1021,7 +1101,11 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ 3:
+=======
 /***/ 4:
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /*!*******************************!*\
   !*** multi ./pages/secret.js ***!
   \*******************************/

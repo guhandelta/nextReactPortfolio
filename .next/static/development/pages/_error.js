@@ -6147,6 +6147,9 @@ if (hadRuntime) {
 /***/ }),
 
 <<<<<<< HEAD
+/***/ 8:
+=======
+<<<<<<< HEAD
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
   !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_5a69c71dbdf1d30ccbcd ***!
@@ -6173,6 +6176,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd
 =======
 /***/ 4:
 >>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /*!******************************************************!*\
   !*** multi ./node_modules/next/dist/pages/_error.js ***!
   \******************************************************/
@@ -6180,7 +6184,11 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5a69c71dbdf1d30ccbcd
 /***/ (function(module, exports, __webpack_require__) {
 
 __NEXT_REGISTER_PAGE('/_error', function() {
+<<<<<<< HEAD
+module.exports = __webpack_require__(/*! I:\Projects\nextReactPortfolio\node_modules\next\dist\pages\_error.js */"./node_modules/next/dist/pages/_error.js");
+=======
 module.exports = __webpack_require__(/*! I:\Projects\nextReactReduxPortfolio\node_modules\next\dist\pages\_error.js */"./node_modules/next/dist/pages/_error.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 return { page: module.exports.default }});
 
