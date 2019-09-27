@@ -29,7 +29,11 @@ app.prepare()
         return res.json(secretData);
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942

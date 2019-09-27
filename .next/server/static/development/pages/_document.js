@@ -112,7 +112,11 @@ module.exports = __webpack_require__(/*! next/document */ "next/document")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! I:\Projects\nextReactPortfolio\node_modules\next\dist\pages\_document.js */"./node_modules/next/dist/pages/_document.js");
+=======
+module.exports = __webpack_require__(/*! I:\Projects\nextReactReduxPortfolio\node_modules\next\dist\pages\_document.js */"./node_modules/next/dist/pages/_document.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 /***/ }),

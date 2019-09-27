@@ -4,12 +4,15 @@ import BasePage from '../components/BasePage';
 
 import withAuth from '../components/hoc/withAuth';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { getSecretData, getSecretDataServer } from '../actions/index';
 
 class Secret extends React.Component {
     static async getInitialProps({req}){
         const anotherSecretData = await getSecretData(req);
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 import { getSecretData, getSecretDataServer } from '../actions';
 
 class Secret extends React.Component {
@@ -18,6 +21,9 @@ class Secret extends React.Component {
         const anotherSecretData = await getSecretData(req);
         // call getSecretData() if the call is made from the browser or call getSecretDataServer() if the call is made from server
 
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
         return { anotherSecretData };
     }
@@ -29,6 +35,10 @@ class Secret extends React.Component {
     async componentDidMount(){ // Making the req for the data, afte the component has been mounted
         const secretData = await getSecretData();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -41,15 +51,21 @@ class Secret extends React.Component {
         const { secretData } = this.state;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(secretData && secretData.length>0){
             return secretData.map((data, index) => {
                 return(
                     <div key={index}>
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
         if( secretData && secretData.length>0 ){
             return secretData.map((data, index) => {
                 return(
                     <div key={ index }>
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                         <p> { data.title } </p>
                         <p> { data.description } </p>
@@ -62,7 +78,11 @@ class Secret extends React.Component {
 
     render() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         const superSecretValue = {...this.props};
+=======
+        debugger;
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
         debugger;
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -72,7 +92,11 @@ class Secret extends React.Component {
                     <h1>Welcome to the Hood!!....</h1>
                     <p>This is a Protected Page</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h3>{ this.props.superSecretValue }</h3>
+=======
+                    <h3>{ this.props.anotherSecretData }</h3>
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
                     <h3>{ this.props.anotherSecretData }</h3>
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942

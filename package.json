@@ -1,6 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "nextreactreduxportfolio",
+=======
+  "name": "nextreactportfolio",
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
   "name": "nextreactportfolio",
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -9,9 +13,15 @@
   "main": "index.js",
   "scripts": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "dev": "node server/index.js",
     "build": "next build",
     "start": "NODE_ENV=production node server/index.js"
+=======
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
     "dev": "node server.js",
     "build": "next build",
@@ -26,7 +36,11 @@
     "@zeit/next-sass": "^1.0.1",
     "async-lock": "^1.1.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "auth0-js": "^9.8.1",
+=======
+    "auth0-js": "^9.11.3",
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
     "auth0-js": "^9.11.3",
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -41,6 +55,7 @@
     "fontfaceobserver": "^2.1.0",
     "formik": "^1.3.2",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "fs": "0.0.1-security",
     "immutable": "^4.0.0-rc.12",
     "js-cookie": "^2.2.1",
@@ -50,11 +65,16 @@
     "mongoose": "^5.3.12",
     "net": "^1.0.2",
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     "immutable": "^4.0.0-rc.12",
     "jsonwebtoken": "^8.3.0",
     "jwks-rsa": "^1.3.0",
     "moment": "^2.22.2",
     "mongoose": "^5.3.12",
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     "next": "^7.0.3",
     "next-routes": "^1.4.2",

@@ -93,10 +93,17 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ "./helper/utils.js":
 /*!*************************!*\
   !*** ./helper/utils.js ***!
   \*************************/
+=======
+/***/ "./helpers/utils.js":
+/*!**************************!*\
+  !*** ./helpers/utils.js ***!
+  \**************************/
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /*! exports provided: getCookieFromReq */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -105,16 +112,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieFromReq", function() { return getCookieFromReq; });
 var getCookieFromReq = function getCookieFromReq(req, cookieKey) {
   var cookie = req.headers.cookie.split(';').find(function (c) {
+<<<<<<< HEAD
     return c.trim().startsWith("".concat(cookieKey, "="));
   });
+=======
+    return c.trim().startsWith("".concat(cookieKey, " = "));
+  }); //Get cookie from header -> split it with ; -> look for the string starting with "cookie"
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
   if (!cookie) {
     return undefined;
   }
 
+<<<<<<< HEAD
   ; // Return undefined if the expiresAtCookie is not available
 
   return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
+=======
+  ; // return undefined if there is no cookie
+
+  return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is data
+  // else return the value of the cookie
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 };
 
 /***/ }),
@@ -316,7 +335,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+<<<<<<< HEAD
 /* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/utils */ "./helper/utils.js");
+=======
+/* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -450,8 +473,13 @@ function () {
                   break;
                 }
 
+<<<<<<< HEAD
                 // JWKS => JSON Web Key -> set of public keys that are used to verify JWT, 
                 //- issued by authorization server(Auth0 in this application) and signed using the RS256 
+=======
+                // JWKS => JSON Web Key -> set of public keys that are used to verify JWT,
+                //- issued by authorization server(Auth0 in this application) and signed using the RS256
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.decode(token, {
                   complete: true
                 }); // The property, complete should be specified to access the header of the token
@@ -474,7 +502,11 @@ function () {
 
                 cert = jwk.x5c[0]; // Extracting the certificate
 
+<<<<<<< HEAD
                 cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long, 
+=======
+                cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long,
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 // which is later joined with a new line
 
                 cert = "-----BEGIN CERTIFICATE-----\n".concat(cert, "\n-----END CERTIFICATE-----\n"); // Compare the kid(Key ID) property of the token and the public key
@@ -562,7 +594,11 @@ function () {
                   break;
                 }
 
+<<<<<<< HEAD
                 token = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+=======
+                token = Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 _context4.next = 4;
                 return this.verifyToken(token);
 

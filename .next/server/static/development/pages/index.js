@@ -88,7 +88,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 6);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -144,8 +148,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _services_auth0__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth0 */ "./services/auth0.js");
+<<<<<<< HEAD
 /* harmony import */ var os__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! os */ "os");
 /* harmony import */ var os__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_4__);
+=======
+<<<<<<< HEAD
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! os */ "os");
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_4__);
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -169,7 +181,14 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 var BstrNavLink = function BstrNavLink(props) {
   var route = props.route,
       title = props.title; //  .Login} 
@@ -282,10 +301,17 @@ function (_React$Component) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./helper/utils.js":
 /*!*************************!*\
   !*** ./helper/utils.js ***!
   \*************************/
+=======
+/***/ "./helpers/utils.js":
+/*!**************************!*\
+  !*** ./helpers/utils.js ***!
+  \**************************/
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /*! exports provided: getCookieFromReq */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -294,16 +320,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieFromReq", function() { return getCookieFromReq; });
 var getCookieFromReq = function getCookieFromReq(req, cookieKey) {
   var cookie = req.headers.cookie.split(';').find(function (c) {
+<<<<<<< HEAD
     return c.trim().startsWith("".concat(cookieKey, "="));
   });
+=======
+    return c.trim().startsWith("".concat(cookieKey, " = "));
+  }); //Get cookie from header -> split it with ; -> look for the string starting with "cookie"
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
   if (!cookie) {
     return undefined;
   }
 
+<<<<<<< HEAD
   ; // Return undefined if the expiresAtCookie is not available
 
   return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is date
+=======
+  ; // return undefined if there is no cookie
+
+  return cookie.split('=')[1]; // split() => returns array of expiresAt text, where 2nd value'[1]' is data
+  // else return the value of the cookie
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 };
 
 /***/ }),
@@ -434,6 +472,10 @@ function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! auth0-js */ "auth0-js");
@@ -444,13 +486,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+<<<<<<< HEAD
 /* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/utils */ "./helper/utils.js");
+=======
+/* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+<<<<<<< HEAD
+=======
+=======
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! auth0-js */ "auth0-js");
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_0__);
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -459,25 +512,51 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 var Auth0 =
 /*#__PURE__*/
 function () {
   function Auth0() {
     _classCallCheck(this, Auth0);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_1___default.a.WebAuth({
       domain: 'guhaprasaanth.auth0.com',
       clientID: 'pcZ8trYSuvn2qMqE720lSdIPaBQPSHLE',
       // ClienID from Auth0
       redirectUri: 'http://localhost:4000/callback',
+<<<<<<< HEAD
+=======
+=======
+    this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_0___default.a.WebAuth({
+      domain: 'guhaprasaanth.auth0.com',
+      clientID: '9FZS9U2vIrNSpKP9hECiZM3w4pPFzDqm',
+      redirecUrl: 'http://loalhost:4000/callback',
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
       responseType: 'token id_token',
       scope: 'openid profile'
     });
     this.login = this.login.bind(this);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.logout = this.logout.bind(this);
   }
@@ -524,10 +603,22 @@ function () {
       });
     }
   }, {
+<<<<<<< HEAD
+=======
+=======
+  }
+
+  _createClass(Auth0, [{
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     key: "login",
     value: function login() {
       this.auth0.authorize();
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
   }, {
     key: "getJWKS",
     value: function () {
@@ -578,8 +669,13 @@ function () {
                   break;
                 }
 
+<<<<<<< HEAD
                 // JWKS => JSON Web Key -> set of public keys that are used to verify JWT, 
                 //- issued by authorization server(Auth0 in this application) and signed using the RS256 
+=======
+                // JWKS => JSON Web Key -> set of public keys that are used to verify JWT,
+                //- issued by authorization server(Auth0 in this application) and signed using the RS256
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_3___default.a.decode(token, {
                   complete: true
                 }); // The property, complete should be specified to access the header of the token
@@ -602,7 +698,11 @@ function () {
 
                 cert = jwk.x5c[0]; // Extracting the certificate
 
+<<<<<<< HEAD
                 cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long, 
+=======
+                cert = cert.match(/.{1,64}/g).join('\n'); // THe RegEx will create an array of strings, 64char long,
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 // which is later joined with a new line
 
                 cert = "-----BEGIN CERTIFICATE-----\n".concat(cert, "\n-----END CERTIFICATE-----\n"); // Compare the kid(Key ID) property of the token and the public key
@@ -690,7 +790,11 @@ function () {
                   break;
                 }
 
+<<<<<<< HEAD
                 token = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+=======
+                token = Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_5__["getCookieFromReq"])(req, 'jwt');
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
                 _context4.next = 4;
                 return this.verifyToken(token);
 
@@ -715,6 +819,11 @@ function () {
 
       return serverAuth;
     }()
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
   }]);
 
   return Auth0;
@@ -725,7 +834,15 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 6:
+=======
+<<<<<<< HEAD
+/***/ 5:
+=======
+/***/ 3:
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -737,6 +854,10 @@ module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /***/ "@babel/runtime/regenerator":
 /*!*********************************************!*\
   !*** external "@babel/runtime/regenerator" ***!
@@ -748,6 +869,11 @@ module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /***/ "auth0-js":
 /*!***************************!*\
   !*** external "auth0-js" ***!
@@ -759,6 +885,10 @@ module.exports = require("auth0-js");
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /***/ "axios":
 /*!************************!*\
   !*** external "axios" ***!
@@ -792,6 +922,11 @@ module.exports = require("jsonwebtoken");
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 75b1b43e7c22903cf87a13ce26ce3836409a03a9
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 /***/ "next/link":
 /*!****************************!*\
   !*** external "next/link" ***!

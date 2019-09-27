@@ -1281,7 +1281,11 @@ atob@^2.1.1:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 auth0-js@^9.8.1:
+=======
+auth0-js@^9.11.3:
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 auth0-js@^9.11.3:
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -2642,9 +2646,15 @@ ee-first@1.1.1:
 
 electron-to-chromium@^1.3.247:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "1.3.263"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.263.tgz#089957556c0a3e2a3726217449796914e5fe9609"
   integrity sha512-VfPi+sE/1nEKOV7DWDqWSUGP7ztJG5FeqHbMEj6dBb/arKnxpOCnRXOSC6HBV6qTfK5v8CX7xWCqzN36UqG1oA==
+=======
+  version "1.3.260"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.260.tgz#ffd686b4810bab0e1a428e7af5f08c21fe7c1fa2"
+  integrity sha512-wGt+OivF1C1MPwaSv3LJ96ebNbLAWlx3HndivDDWqwIVSQxmhL17Y/YmwUdEMtS/bPyommELt47Dct0/VZNQBQ==
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
   version "1.3.260"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.260.tgz#ffd686b4810bab0e1a428e7af5f08c21fe7c1fa2"
@@ -2731,17 +2741,23 @@ error-ex@^1.2.0, error-ex@^1.3.1:
 
 error-stack-parser@^2.0.0:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/error-stack-parser/-/error-stack-parser-2.0.4.tgz#a757397dc5d9de973ac9a5d7d4e8ade7cfae9101"
   integrity sha512-fZ0KkoxSjLFmhW5lHbUT3tLwy3nX1qEzMYo8koY1vrsAco53CMT1djnBSeC/wUjTEZRhZl9iRw7PaMaxfJ4wzQ==
   dependencies:
     stackframe "^1.1.0"
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/error-stack-parser/-/error-stack-parser-2.0.3.tgz#9d3c000fb9f5c461f7c4e63c1aa75373ac7aaa36"
   integrity sha512-vRC4rKv87twMZy92X4+TmUdv3iYMsmePbpG/YguHsfzmZ8bYJZYYep7yrXH09yFUaCEPKgNK5X79+Yq7hwLVOA==
   dependencies:
     stackframe "^1.0.4"
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 es-abstract@^1.12.0, es-abstract@^1.5.1:
@@ -3179,17 +3195,23 @@ from2@^2.1.0:
 
 fs-minipass@^1.2.5:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.7.tgz#ccff8570841e7fe4265693da88936c55aed7f7c7"
   integrity sha512-GWSSJGFy4e9GUeCcbIkED+bgAoFyj7XF1mV8rma3QW4NIqX9Kyx79N/PF61H5udOV3aY1IaMLs6pGbH71nlCTA==
   dependencies:
     minipass "^2.6.0"
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.6.tgz#2c5cc30ded81282bfe8a0d7c7c1853ddeb102c07"
   integrity sha512-crhvyXcMejjv3Z5d2Fa9sf5xLYVCF5O1c71QxbVnbLsmYMBEvDAftewesN/HhY03YRoA7zOMxjNGrF5svGaaeQ==
   dependencies:
     minipass "^2.2.1"
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 fs-write-stream-atomic@^1.0.8:
@@ -3208,11 +3230,14 @@ fs.realpath@^1.0.0:
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 fs@0.0.1-security:
   version "0.0.1-security"
   resolved "https://registry.yarnpkg.com/fs/-/fs-0.0.1-security.tgz#8a7bd37186b6dddf3813f23858b57ecaaf5e41d4"
   integrity sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
 
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 fsevents@^1.2.7:
@@ -4032,7 +4057,11 @@ js-base64@^2.1.8:
   integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 js-cookie@^2.2.0, js-cookie@^2.2.1:
+=======
+js-cookie@^2.2.0:
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 js-cookie@^2.2.0:
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -4111,7 +4140,11 @@ json5@^1.0.1:
     minimist "^1.2.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 jsonwebtoken@^8.1.0, jsonwebtoken@^8.5.1:
+=======
+jsonwebtoken@^8.1.0, jsonwebtoken@^8.3.0, jsonwebtoken@^8.5.1:
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 jsonwebtoken@^8.1.0, jsonwebtoken@^8.3.0, jsonwebtoken@^8.5.1:
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -4155,7 +4188,11 @@ jwa@^1.4.1:
     safe-buffer "^5.0.1"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 jwks-rsa@^1.6.0:
+=======
+jwks-rsa@^1.3.0:
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 jwks-rsa@^1.3.0:
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
@@ -4653,15 +4690,21 @@ minimist@1.2.0, minimist@^1.1.3, minimist@^1.2.0:
   integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 minipass@^2.2.1, minipass@^2.6.0, minipass@^2.6.4:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.5.tgz#1c245f9f2897f70fd4a219066261ce6c29f80b18"
   integrity sha512-ewSKOPFH9blOLXx0YSE+mbrNMBFPS+11a2b03QZ+P4LVrUHW/GAlqeYC7DBknDyMWkHzrzTpDhUvy7MUxqyrPA==
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 minipass@^2.2.1, minipass@^2.3.5:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.0.tgz#80a68c8a43257b7f744ce09733f6a9c6eef9f731"
   integrity sha512-OuNZ0OHrrI+jswzmgivYBZ+fAAGHZA4293d5q0z631/I9QSw3yumKB92njxHIHiB1eAdGRsE+3CcOPkoEyV5FQ==
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
   dependencies:
     safe-buffer "^5.1.2"
@@ -4864,11 +4907,14 @@ neo-async@^2.5.0:
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 net@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/net/-/net-1.0.2.tgz#d1757ec9a7fb2371d83cf4755ce3e27e10829388"
   integrity sha1-0XV+yaf7I3HYPPR1XOPifhCCk4g=
 
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 next-routes@^1.4.2:
@@ -5321,9 +5367,15 @@ parallel-transform@^1.1.0:
 
 parse-asn1@^5.0.0:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "5.1.5"
   resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.5.tgz#003271343da58dc94cace494faef3d2147ecea0e"
   integrity sha512-jkMYn1dcJqF6d5CpU689bq7w/b5ALS9ROVSpQDPrZsqqesUJii9qutvoT5ltGedNXMO2e16YUWIghG9KxaViTQ==
+=======
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.4.tgz#37f6628f823fbdeb2273b4d540434a22f3ef1fcc"
+  integrity sha512-Qs5duJcuvNExRfFZ99HDD3z4mAi3r9Wl/FOjEOijlxwCZs7E7mW2vjTpgQ4J8LpTF8x5v+1Vn5UQFejmWT11aw==
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 =======
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.4.tgz#37f6628f823fbdeb2273b4d540434a22f3ef1fcc"
@@ -6972,15 +7024,21 @@ stable@^0.1.8:
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 stackframe@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.1.0.tgz#e3fc2eb912259479c9822f7d1f1ff365bd5cbc83"
   integrity sha512-Vx6W1Yvy+AM1R/ckVwcHQHV147pTPBKWCRLrXMuPrFVfvBUc3os7PR1QLIWCMhPpRg5eX9ojzbQIMLGBwyLjqg==
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 stackframe@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.0.4.tgz#357b24a992f9427cba6b545d96a14ed2cbca187b"
   integrity sha512-to7oADIniaYwS3MhtCa/sQhrxidCCQiF/qp4/m5iN3ipf0Y7Xlri0f6eG29r08aL7JYl8n32AF3Q5GYBZ7K8vw==
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 static-extend@^0.1.1:
@@ -7257,6 +7315,7 @@ tar@^2.0.0:
 
 tar@^4:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "4.4.11"
   resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.11.tgz#7ac09801445a3cf74445ed27499136b5240ffb73"
   integrity sha512-iI4zh3ktLJKaDNZKZc+fUONiQrSn9HkCFzamtb7k8FFmVilHVob7QsLX/VySAW8lAviMzMbFw4QtFb4errwgYA==
@@ -7265,6 +7324,8 @@ tar@^4:
     fs-minipass "^1.2.5"
     minipass "^2.6.4"
 =======
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
   version "4.4.10"
   resolved "https://registry.yarnpkg.com/tar/-/tar-4.4.10.tgz#946b2810b9a5e0b26140cf78bea6b0b0d689eba1"
   integrity sha512-g2SVs5QIxvo6OLp0GudTqEf05maawKUxXru104iaayWA09551tFCTI8f1Asb4lPfkBr91k07iL4c11XO3/b0tA==
@@ -7272,6 +7333,9 @@ tar@^4:
     chownr "^1.1.1"
     fs-minipass "^1.2.5"
     minipass "^2.3.5"
+<<<<<<< HEAD
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
 >>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     minizlib "^1.2.1"
     mkdirp "^0.5.0"
