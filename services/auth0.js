@@ -1,20 +1,29 @@
 import auth0 from 'auth0-js';
+<<<<<<< HEAD
 import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 import { getCookieFromReq } from '../helper/utils';
+=======
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 
 class Auth0{
     constructor(){
         this.auth0 = new auth0.WebAuth({
             domain: 'guhaprasaanth.auth0.com',
+<<<<<<< HEAD
             clientID: 'pcZ8trYSuvn2qMqE720lSdIPaBQPSHLE', // ClienID from Auth0
             redirectUri : 'http://localhost:4000/callback',
+=======
+            clientID: '9FZS9U2vIrNSpKP9hECiZM3w4pPFzDqm',
+            redirecUrl: 'http://loalhost:4000/callback',
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
             responseType: 'token id_token',
             scope: 'openid profile'
         });
 
         this.login = this.login.bind(this);
+<<<<<<< HEAD
         this.handleAuthentication = this.handleAuthentication.bind(this);
         this.logout = this.logout.bind(this);
     }
@@ -123,6 +132,13 @@ class Auth0{
         }
         return undefined;
     }
+=======
+    }
+
+    login(){
+        this.auth0.authorize();
+    }
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
 }
 
 const auth0Client = new Auth0();
