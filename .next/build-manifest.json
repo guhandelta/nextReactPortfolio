@@ -13,11 +13,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/secret": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/owner": [
+    "/": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

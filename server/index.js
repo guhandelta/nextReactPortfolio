@@ -25,7 +25,10 @@ app.prepare()
     const server = express();
 
     server.get('/api/v1/secret', authService.checkJWT, (req,res) => {
+        return res.json(secretData);
+    })
 
+    server.get('/api/v1/onlysiteowner', authService.checkJWT,authService.checkRole('siteOwner'), (req,res) => {
         return res.json(secretData);
     })
     
