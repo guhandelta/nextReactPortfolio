@@ -9,10 +9,10 @@ class PortfolioNew extends React.Component {
         return (
             <BaseLayout {...this.props.auth}>
                 <BasePage className="portfolio-create-page" title="Create New Portfolio">
-                    <PortfolioCreateForm />
+                    <PortfolioCreateForm  />
                 </BasePage>
             </BaseLayout>
-        )
+        )  
     }
 }
 export default withAuth('siteOwner')(PortfolioNew);

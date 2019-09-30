@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -331,99 +331,56 @@ var BaseLayout = function BaseLayout(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "formik");
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(formik__WEBPACK_IMPORTED_MODULE_1__);
+// Render Prop
 
 
 
-var PortfolioCreateForm =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(PortfolioCreateForm, _React$Component);
+var PortfolioCreateForm = function PortfolioCreateForm() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Formik"], {
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    validate: function validate(values) {
+      var errors = {};
 
-  function PortfolioCreateForm(props) {
-    var _this;
+      if (!values.email) {
+        errors.email = 'Required';
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+        errors.email = 'Invalid email address';
+      }
 
-    _classCallCheck(this, PortfolioCreateForm);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PortfolioCreateForm).call(this, props));
-    _this.state = {
-      title: '',
-      description: '',
-      language: ''
-    };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(PortfolioCreateForm, [{
-    key: "handleChange",
-    value: function handleChange(event) {
-      debugger;
-      var inputField = event.target.name;
-      this.setState(_defineProperty({}, inputField, event.target.value));
+      return errors;
+    },
+    onSubmit: function onSubmit(values, _ref) {
+      var setSubmitting = _ref.setSubmitting;
+      setTimeout(function () {
+        alert(JSON.stringify(values, null, 2));
+        setSubmitting(false);
+      }, 400);
     }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.title + ' ' + this.state.description + ' ' + this.state.language);
-      event.preventDefault();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "title",
-        type: "text",
-        value: this.state.title,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: ""
-      }, "Description:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        name: "description",
-        value: this.state.description,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Pick your favorite Programming Language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        name: "language",
-        value: this.state.language,
-        onChange: this.handleChange
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "javascript"
-      }, "JavaScript"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "python"
-      }, "Python"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "rubyonrails"
-      }, "Ruby on Rails"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "c++"
-      }, "C++"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Submit"
-      }));
-    }
-  }]);
-
-  return PortfolioCreateForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  }, function (_ref2) {
+    var isSubmitting = _ref2.isSubmitting;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "email",
+      name: "email"
+    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "email",
+      component: "div"
+    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "password",
+      name: "password"
+    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "password",
+      component: "div"
+    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "submit",
+      disabled: isSubmitting
+    }, "Submit"));
+  }));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (PortfolioCreateForm);
 
@@ -978,7 +935,7 @@ var auth0Client = new Auth0();
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*************************************!*\
   !*** multi ./pages/portfolioNew.js ***!
   \*************************************/
@@ -1020,6 +977,17 @@ module.exports = require("auth0-js");
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "formik":
+/*!*************************!*\
+  !*** external "formik" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("formik");
 
 /***/ }),
 
