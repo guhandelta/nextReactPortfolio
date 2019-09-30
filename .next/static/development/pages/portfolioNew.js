@@ -242,23 +242,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var validateInputs = function validateInputs(validate) {
+  var errors = {}; // if (!values.email) {
+  //   errors.email = 'Required';
+  // } else if (
+  //   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+  // ) {
+  //   errors.email = 'Invalid email address';
+  // }
+
+  return errors;
+};
+
+var INITIAL_VALUES = {
+  title: '',
+  company: '',
+  location: '',
+  position: '',
+  descripition: '',
+  startDate: '',
+  endDate: ''
+};
+
 var PortfolioCreateForm = function PortfolioCreateForm() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Formik"], {
     initialValues: {
       email: '',
       password: ''
     },
-    validate: function validate(values) {
-      var errors = {};
-
-      if (!values.email) {
-        errors.email = 'Required';
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-      }
-
-      return errors;
-    },
+    validate: validateInputs,
     onSubmit: function onSubmit(values, _ref) {
       var setSubmitting = _ref.setSubmitting;
       setTimeout(function () {
@@ -268,22 +280,67 @@ var PortfolioCreateForm = function PortfolioCreateForm() {
     }
   }, function (_ref2) {
     var isSubmitting = _ref2.isSubmitting;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
-      type: "email",
-      name: "email"
-    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Title: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "text",
+      name: "title"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
       name: "email",
       component: "div"
-    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
-      type: "password",
-      name: "password"
-    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
-      name: "password",
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Company: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "text",
+      name: "company"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "company",
       component: "div"
-    }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Location: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "text",
+      name: "location"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "location",
+      component: "div"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Position: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "text",
+      name: "position"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "position",
+      component: "div"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Description: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "textarea",
+      name: "descripition",
+      component: "textarea"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "descripition",
+      component: "div"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Start Date: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "date",
+      name: "startDate"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "startDate",
+      component: "div"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: ""
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "End Date: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
+      type: "date",
+      name: "endDate"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["ErrorMessage"], {
+      name: "endDate",
+      component: "div"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "submit",
       disabled: isSubmitting
-    }, "Submit"));
+    }, "Create"));
   }));
 };
 
