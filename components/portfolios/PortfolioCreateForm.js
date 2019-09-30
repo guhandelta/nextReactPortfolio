@@ -2,6 +2,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, Label } from 'reactstrap';
+import PortInput from '../form/PortInput';
 
 const validateInputs = (validate) => {
     let errors = {};
@@ -28,7 +29,7 @@ const INITIAL_VALUES = {
 const PortfolioCreateForm = () => (
   <div>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={INITIAL_VALUES}
       validate={validateInputs}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -39,35 +40,12 @@ const PortfolioCreateForm = () => (
     >
       {({ isSubmitting }) => (
         <Form>
-            <FormGroup className="">
-                <Label>Title: </Label>
-                <Field className="form-control" type="text" name="title" /> 
-                <ErrorMessage name="email" component="div" /> 
-            </FormGroup>
-          
-            <FormGroup className="">
-                <Label>Company: </Label>
-                <Field className="form-control" type="text" name="company" /> 
-                <ErrorMessage name="company" component="div" /> 
-            </FormGroup>
-            
-            <FormGroup className="">
-                <Label>Location: </Label>
-                <Field className="form-control" type="text" name="location" />  
-                <ErrorMessage name="location" component="div" /> 
-            </FormGroup>
-            
-            <FormGroup className="">
-                <Label>Position: </Label>
-                <Field className="form-control" type="text" name="position" /> 
-                <ErrorMessage name="position" component="div" /> 
-            </FormGroup>
-            
-            <FormGroup className="">
-                <Label>Description: </Label>
-                <Field className="form-control" type="textarea" name="descripition" component="textarea" /> 
-                <ErrorMessage name="descripition" component="div" /> 
-            </FormGroup>
+
+            <Field className="form-control" type="text" name="title" label="Title" component={PortInput} /> 
+            <Field className="form-control" type="text" name="company" label="Company" component={PortInput} /> 
+            <Field className="form-control" type="text" name="location" label="Location" component={PortInput} /> 
+            <Field className="form-control" type="text" name="position" label="Position" component={PortInput} /> 
+            <Field className="form-control" type="textarea" name="descripition" label="Description" component={PortInput} /> 
             
             <FormGroup className="">
                 <Label>Start Date: </Label>
