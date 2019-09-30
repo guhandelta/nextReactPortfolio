@@ -4,27 +4,27 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, Label } from 'reactstrap';
 import PortInput from '../form/PortInput';
 
-const validateInputs = (validate) => {
+const validateInputs = (values) => {
     let errors = {};
-    // if (!values.email) {
-    //   errors.email = 'Required';
-    // } else if (
-    //   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-    // ) {
-    //   errors.email = 'Invalid email address';
-    // }
+    Object.entries(values).forEach(([key, values]) => {
+        debugger;
+
+        if (!values[key]) {
+            errors[key] = `Field ${key} is reqiuired`
+          }
+    });
     return errors;
 }
 
 const INITIAL_VALUES = {
-                            title: '',
-                            company: '',
-                            location: '',
-                            position: '',
-                            descripition: '',
-                            startDate: '',
-                            endDate: '',
-};
+                        title: '',
+                        company: '',
+                        location: '',
+                        position: '',
+                        descripition: '',
+                        startDate: '',
+                        endDate: '',
+                    };
 
 const PortfolioCreateForm = () => (
   <div>
@@ -50,13 +50,13 @@ const PortfolioCreateForm = () => (
             <FormGroup className="">
                 <Label>Start Date: </Label>
                 <Field className="form-control" type="date" name="startDate" />
-                <ErrorMessage name="startDate" component="div" /> 
+                <ErrorMessage  className="error" name="startDate" component="div" /> 
             </FormGroup>
             
             <FormGroup className="">
                 <Label>End Date: </Label>
                 <Field className="form-control" type="date" name="endDate" /> 
-                <ErrorMessage name="endDate" component="div" />  
+                <ErrorMessage className="error" name="endDate" component="div" />  
             </FormGroup>
             
             <Button type="submit" disabled={isSubmitting}>
