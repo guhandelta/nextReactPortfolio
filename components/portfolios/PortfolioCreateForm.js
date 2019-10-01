@@ -15,7 +15,15 @@ const validateInputs = (values) => {
         if (!values[key] && (values[key] === 'startDate' || values[key] === 'endDate')) {
             errors[key] = `Field ${key} is reqiuired`
           }
-    });
+    }); 
+
+    const startDate = values.startDate;
+    const endDate = values.endDate;
+
+    if(startDate && endDate && endDate.isBefore(startDate)){
+      errors.endDate = 'End Date can\'t be before Start Date!!!';
+    }
+
     return errors;
 }
 

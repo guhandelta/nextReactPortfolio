@@ -101,16 +101,26 @@ function (_React$Component) {
   _createClass(PortDate, [{
     key: "handleChange",
     value: function handleChange(date) {
-      debugger;
+      var _this$props$form = this.props.form,
+          setFieldValue = _this$props$form.setFieldValue,
+          setFieldTouched = _this$props$form.setFieldTouched;
+      var name = this.props.field.name;
       var formattedDate = date.format();
       this.setState({
         dateValue: date
       });
+      setFieldValue(name, date, true);
+      setFieldTouched(name, true, true);
     }
   }, {
     key: "render",
     value: function render() {
-      var label = this.props.label;
+      var _this$props = this.props,
+          label = _this$props.label,
+          field = _this$props.field,
+          _this$props$form2 = _this$props.form,
+          touched = _this$props$form2.touched,
+          errors = _this$props$form2.errors;
       return (// The Moment Object will be assigned to the DatePicker, whenever some date is clicked => DatePicker will provide that object
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], null, label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "input-control"
@@ -122,7 +132,9 @@ function (_React$Component) {
           showYearDropdown: true,
           maxDate: moment__WEBPACK_IMPORTED_MODULE_2___default()(),
           dropdownMode: "select"
-        })))
+        })), touched[field.name] && errors[field.name] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "error"
+        }, errors[field.name]))
       );
     }
   }]);
@@ -164,6 +176,7 @@ var PortInput = function PortInput(_ref) {
       errors = _ref$form.errors,
       props = _objectWithoutProperties(_ref, ["label", "type", "field", "form"]);
 
+  debugger;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], null, label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], _extends({
     type: type
   }, field, props)), touched[field.name] && errors[field.name] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -407,6 +420,13 @@ var validateInputs = function validateInputs(values) {
       errors[key] = "Field ".concat(key, " is reqiuired");
     }
   });
+  var startDate = values.startDate;
+  var endDate = values.endDate;
+
+  if (startDate && endDate && endDate.isBefore(startDate)) {
+    errors.endDate = 'End Date can\'t be before Start Date!!!';
+  }
+
   return errors;
 };
 

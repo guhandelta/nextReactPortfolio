@@ -15,16 +15,20 @@ export default class PortDate extends React.Component {
     }
 
     handleChange(date){
-        debugger;
+        const { setFieldValue, setFieldTouched  } = this.props.form;
+        const { name  } = this.props.field;   
         
         const formattedDate = date.format();
         this.setState({
             dateValue: date
         });
+
+        setFieldValue(name, date, true);
+        setFieldTouched(name, true, true);
     }
 
     render() {
-        const { label } = this.props;
+        const { label, field, form: { touched, errors }} = this.props;
         return (
                 // The Moment Object will be assigned to the DatePicker, whenever some date is clicked => DatePicker will provide that object
             <FormGroup>
@@ -40,6 +44,8 @@ export default class PortDate extends React.Component {
                         dropdownMode="select"
                     />
                </div>
+                {touched[field.name] &&
+                errors[field.name] && <div className="error">{errors[field.name]}</div>}
             </FormGroup>
         );
     }
