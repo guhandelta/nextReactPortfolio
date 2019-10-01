@@ -3,13 +3,16 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, Label } from 'reactstrap';
 import PortInput from '../form/PortInput';
+import PortDate from '../form/PortDate';
 
 const validateInputs = (values) => {
     let errors = {};
-    Object.entries(values).forEach(([key, values]) => {
+  
+    debugger;
+    Object.entries(values).forEach(([key, value]) => {
         debugger;
 
-        if (!values[key]) {
+        if (!values[key] && (values[key] === 'startDate' || values[key] === 'endDate')) {
             errors[key] = `Field ${key} is reqiuired`
           }
     });
@@ -32,6 +35,7 @@ const PortfolioCreateForm = () => (
       initialValues={INITIAL_VALUES}
       validate={validateInputs}
       onSubmit={(values, { setSubmitting }) => {
+        debugger;
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
@@ -41,23 +45,13 @@ const PortfolioCreateForm = () => (
       {({ isSubmitting }) => (
         <Form>
 
-            <Field className="form-control" type="text" name="title" label="Title" component={PortInput} /> 
-            <Field className="form-control" type="text" name="company" label="Company" component={PortInput} /> 
-            <Field className="form-control" type="text" name="location" label="Location" component={PortInput} /> 
-            <Field className="form-control" type="text" name="position" label="Position" component={PortInput} /> 
-            <Field className="form-control" type="textarea" name="descripition" label="Description" component={PortInput} /> 
-            
-            <FormGroup className="">
-                <Label>Start Date: </Label>
-                <Field className="form-control" type="date" name="startDate" />
-                <ErrorMessage  className="error" name="startDate" component="div" /> 
-            </FormGroup>
-            
-            <FormGroup className="">
-                <Label>End Date: </Label>
-                <Field className="form-control" type="date" name="endDate" /> 
-                <ErrorMessage className="error" name="endDate" component="div" />  
-            </FormGroup>
+            <Field type="text" name="title" label="Title" component={PortInput} /> 
+            <Field type="text" name="company" label="Company" component={PortInput} /> 
+            <Field type="text" name="location" label="Location" component={PortInput} /> 
+            <Field type="text" name="position" label="Position" component={PortInput} /> 
+            <Field type="textarea" name="descripition" label="Description" component={PortInput} /> 
+            <Field name="startDate" label="Start Date" component={PortDate} />
+            <Field name="endDate"  label="End Date" component={PortDate} /> <br/> <br/>
             
             <Button type="submit" disabled={isSubmitting}>
                 Create
