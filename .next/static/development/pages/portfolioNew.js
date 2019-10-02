@@ -91,48 +91,78 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PortDate).call(this, props));
     _this.state = {
-      dateValue: moment__WEBPACK_IMPORTED_MODULE_2___default()() // Moment()=> current date
-
+      dateValue: moment__WEBPACK_IMPORTED_MODULE_2___default()(),
+      // Moment()=> current date
+      isHidden: false
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(PortDate, [{
-    key: "handleChange",
-    value: function handleChange(date) {
+    key: "setFieldValueAndTouched",
+    value: function setFieldValueAndTouched(date, touched) {
       var _this$props$form = this.props.form,
           setFieldValue = _this$props$form.setFieldValue,
           setFieldTouched = _this$props$form.setFieldTouched;
       var name = this.props.field.name;
-      var formattedDate = date.format();
+      setFieldValue(name, date, true);
+      setFieldTouched(name, touched, true);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(date) {
       this.setState({
         dateValue: date
       });
-      setFieldValue(name, date, true);
-      setFieldTouched(name, true, true);
+      this.setFieldValueAndTouched(date, true);
+    }
+  }, {
+    key: "toggleData",
+    value: function toggleData(date) {
+      this.setState({
+        isHidden: !this.state.isHidden
+      });
+      this.setFieldValueAndTouched(date, true);
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
+          canBeDisabled = _this$props.canBeDisabled,
           label = _this$props.label,
           field = _this$props.field,
           _this$props$form2 = _this$props.form,
           touched = _this$props$form2.touched,
           errors = _this$props$form2.errors;
+      var _this$state = this.state,
+          isHidden = _this$state.isHidden,
+          dateValue = _this$state.dateValue;
       return (// The Moment Object will be assigned to the DatePicker, whenever some date is clicked => DatePicker will provide that object
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], null, label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Label"], null, label), !isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "input-control"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          selected: this.state.dateValue,
+          selected: dateValue,
           onChange: this.handleChange,
           peekNextMonth: true,
           showMonthDropdown: true,
           showYearDropdown: true,
           maxDate: moment__WEBPACK_IMPORTED_MODULE_2___default()(),
           dropdownMode: "select"
-        })), touched[field.name] && errors[field.name] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), canBeDisabled && !isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+          onClick: function onClick() {
+            return _this2.toggleData(null);
+          }
+        }, " Still Working Here..... ") //
+        // Send undefined(empty params), to toggleData(), if the End Date is Hidden
+        , canBeDisabled && isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Still Working Here... "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+          onClick: function onClick() {
+            return _this2.toggleData(dateValue);
+          }
+        }, " Set End Date ")) // Send the Date specified in DatePicker, to toggleData(), if a date is specified
+        , touched[field.name] && errors[field.name] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "error"
         }, errors[field.name]))
       );
@@ -485,6 +515,7 @@ var PortfolioCreateForm = function PortfolioCreateForm() {
       component: _form_PortDate__WEBPACK_IMPORTED_MODULE_4__["default"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
       name: "endDate",
+      canBeDisabled: true,
       label: "End Date",
       component: _form_PortDate__WEBPACK_IMPORTED_MODULE_4__["default"]
     }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
