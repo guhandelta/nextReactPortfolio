@@ -1,12 +1,16 @@
 const express = require('express');
 const next = require('next');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const routes = require('../routes');
 const authService = require('./services/auth');
+const config = require('./config');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
 const handle = routes.getRequestHandler(app);
+
+const Book = require('./models/book');
 
 const secretData = [
     {
@@ -17,16 +21,35 @@ const secretData = [
         title:'secretData2',
         description: 'Nuke Codes'
     }
-
+    
 ]
 
-mongoose.connect('mongodb://Guhaprasaanth:pass123456@ds129098.mlab.com:29098/guhaprasaanth-portfolio',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(config.DB_URI,{ useCreateIndex: true ,useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=> console.log('Database Connection Successful!!'))
     .catch(err => console.error(err));
+
+// async () => (await mongoose.connect(config.DB_URI),{ useCreateIndex: true ,useNewUrlParser: true, useUnifiedTopology: true })();
 
 app.prepare()
 .then(() => {
     const server = express();
+    server.use(bodyParser.json());
+    // This like is to inform the server that the bodyParser middleware will be/is used  
+    // body-parser is same the route handler => authService.checkJWT, but this provides additional funcitonality-
+    //- like the data will be available in the request body
+    
+    server.post('/api/v1/books', (req,res) => {
+        const bookData = req.body;
+        console.log(bookData);
+        const book = new Book(bookData);
+
+        book.save((err, createdBook) =>{
+            if(err){
+                return res.status(422).send(err);
+            }
+            return res.json(createdBook);
+        });
+    });
 
     server.get('/api/v1/secret', authService.checkJWT, (req,res) => {
         return res.json(secretData);
@@ -48,6 +71,7 @@ app.prepare()
     server.get('*', (req,res) => {
         return handle(req,res)
     })
+
 
     server.use(function (err, req, res, next) {
         if (err.name === 'UnauthorizedError') {
