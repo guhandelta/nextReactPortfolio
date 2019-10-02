@@ -1,12 +1,10 @@
 {
   "devFiles": [
-    "static/development/dll/dll_acd4b37f209c0ccc13e2.js"
+    "static/development/dll/dll_7b040e8ed50cc38f5e5a.js"
   ],
   "pages": {
     "/_app": [
       "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
     "/_error": [

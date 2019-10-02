@@ -1,7 +1,7 @@
 const express = require('express');
 const next = require('next');
+const mongoose = require('mongoose');
 const routes = require('../routes');
-
 const authService = require('./services/auth');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -19,6 +19,10 @@ const secretData = [
     }
 
 ]
+
+mongoose.connect('mongodb://Guhaprasaanth:pass123456@ds129098.mlab.com:29098/guhaprasaanth-portfolio',{ useNewUrlParser: true, useUnifiedTopology: true })
+    .then(()=> console.log('Database Connection Successful!!'))
+    .catch(err => console.error(err));
 
 app.prepare()
 .then(() => {
