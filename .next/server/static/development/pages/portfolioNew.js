@@ -569,20 +569,15 @@ var INITIAL_VALUES = {
   endDate: ''
 };
 
-var PortfolioCreateForm = function PortfolioCreateForm() {
+var PortfolioCreateForm = function PortfolioCreateForm(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Formik"], {
     initialValues: INITIAL_VALUES,
     validate: validateInputs,
-    onSubmit: function onSubmit(values, _ref3) {
-      var setSubmitting = _ref3.setSubmitting;
-      debugger;
-      setTimeout(function () {
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-      }, 400);
-    }
-  }, function (_ref4) {
-    var isSubmitting = _ref4.isSubmitting;
+    onSubmit: props.onSubmit // The porfolio form just need to take care of receiving all the data and does not need to know anything about API calls to the-
+    //- server to save the portfolio info, so the validation and the API requests are handles spearately => to simplify the code
+
+  }, function (_ref3) {
+    var isSubmitting = _ref3.isSubmitting;
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_1__["Field"], {
       type: "text",
       name: "title",
@@ -618,6 +613,8 @@ var PortfolioCreateForm = function PortfolioCreateForm() {
       label: "End Date",
       component: _form_PortDate__WEBPACK_IMPORTED_MODULE_4__["default"]
     }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      size: "lg",
+      color: "success",
       type: "submit",
       disabled: isSubmitting
     }, "Create"));
@@ -848,9 +845,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -868,13 +865,22 @@ var PortfolioNew =
 function (_React$Component) {
   _inherits(PortfolioNew, _React$Component);
 
-  function PortfolioNew() {
+  function PortfolioNew(props) {
+    var _this;
+
     _classCallCheck(this, PortfolioNew);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PortfolioNew).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PortfolioNew).call(this, props));
+    _this.savePortfolio = _this.savePortfolio.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PortfolioNew, [{
+    key: "savePortfolio",
+    value: function savePortfolio(portfolioData) {
+      alert(JSON.stringify(portfolioData, null, 2));
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], this.props.auth, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BasePage__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -882,7 +888,9 @@ function (_React$Component) {
         title: "Create New Portfolio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Col"], {
         md: "6"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_portfolios_PortfolioCreateForm__WEBPACK_IMPORTED_MODULE_4__["default"], null)))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_portfolios_PortfolioCreateForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onSubmit: this.savePortfolio
+      })))));
     }
   }]);
 

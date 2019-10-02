@@ -1,7 +1,7 @@
 // Render Prop
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Button, FormGroup, Label } from 'reactstrap';
+import { Button } from 'reactstrap';
 import PortInput from '../form/PortInput';
 import PortDate from '../form/PortDate';
 
@@ -37,18 +37,14 @@ const INITIAL_VALUES = {
                         endDate: '',
                     };
 
-const PortfolioCreateForm = () => (
+const PortfolioCreateForm = (props) => (
   <div>
     <Formik
       initialValues={INITIAL_VALUES}
       validate={validateInputs}
-      onSubmit={(values, { setSubmitting }) => {
-        debugger;
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
+      onSubmit={props.onSubmit}
+      // The porfolio form just need to take care of receiving all the data and does not need to know anything about API calls to the-
+      //- server to save the portfolio info, so the validation and the API requests are handles spearately => to simplify the code
     >
       {({ isSubmitting }) => (
         <Form>
@@ -60,8 +56,8 @@ const PortfolioCreateForm = () => (
             <Field type="textarea" name="descripition" label="Description" component={PortInput} /> 
             <Field name="startDate" label="Start Date" component={PortDate} />
             <Field name="endDate" canBeDisabled={true} label="End Date" component={PortDate} /> <br/> <br/>
-            
-            <Button type="submit" disabled={isSubmitting}>
+
+            <Button size="lg" color="success" type="submit" disabled={isSubmitting}>
                 Create
             </Button>
         </Form>
