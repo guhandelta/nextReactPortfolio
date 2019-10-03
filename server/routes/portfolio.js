@@ -14,4 +14,14 @@ router.get('', authService.checkJWT,
                 portfolioControllers.getPortfolios
             );
 
+router.patch('/:id', authService.checkJWT, 
+                authService.checkRole('siteOwner'),
+                portfolioControllers.updatePortfolio
+            );
+
+router.delete('/:id', authService.checkJWT, 
+                authService.checkRole('siteOwner'), 
+                portfolioControllers.deletePortfolio
+            );
+
 module.exports = router;
