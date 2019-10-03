@@ -6,7 +6,9 @@ const bodyParser = require('body-parser');
 const routes = require('../routes');
 const authService = require('./services/auth');
 const config = require('./config');
+
 const bookRoutes = require('./routes/book');
+const portfolioRoutes = require('./routes/portfolio');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
@@ -26,7 +28,7 @@ const secretData = [
     
 ]
 
-mongoose.connect(config.DB_URI,{ useCreateIndex: true ,useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(config.DB_URI,{ useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=> console.log('Database Connection Successful!!'))
     .catch(err => console.error(err));
 
@@ -41,7 +43,7 @@ app.prepare()
 
     server.use('/api/v1/books', bookRoutes);
     // since the route is provided here, it shall be removed in the routes/book.js file
-    
+    server.use('/api/v1/portfolios', portfolioRoutes);
     
     server.get('/api/v1/secret', authService.checkJWT, (req,res) => {
         return res.json(secretData);
@@ -76,7 +78,7 @@ app.prepare()
         console.log('===> Server Running on http://localhost:4000')
     })
 })
-.catch((ex) => {
+.catch((ex) => { 1
     console.error(ex.stack)
     process.exit(1)
 })   
