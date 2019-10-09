@@ -52,7 +52,15 @@ app.prepare()
     server.get('/api/v1/onlysiteowner', authService.checkJWT,authService.checkRole('siteOwner'), (req,res) => {
         return res.json(secretData);
     })
+<<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
+=======
+
+>>>>>>> 763f56c2d68b240f2e832cc245e462be64169942
     // This block handles specific requests, and is placed before server.get('*',(req,res) =>{-
     // -as the control never crosses that block, to enter this block, and this block never gets executed
     // * is the wild card here
